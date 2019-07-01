@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="45209fs"></ZoomStartTime>
+      <ZoomEndTime time="47830fs"></ZoomEndTime>
+      <Cursor1Time time="66000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="470"></NameColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="31" />
+   <wave_markers>
+      <marker time="1227000" label="" />
+      <marker time="1032000" label="" />
+      <marker time="1088000" label="" />
+   </wave_markers>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/arlen_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/arlen_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">arlen_i[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_address_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_address_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">avm_address_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_read_i" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_read_i</obj_property>
+      <obj_property name="ObjectShortName">avm_read_i</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_write_i" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/avm_write_i</obj_property>
+      <obj_property name="ObjectShortName">avm_write_i</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/awlen_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/awlen_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">awlen_i[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/current_state" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/current_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/next_state" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/next_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/rd_lat_done" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/rd_lat_done</obj_property>
+      <obj_property name="ObjectShortName">rd_lat_done</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_bypassdma_isnt/wr_done" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_bypassdma_isnt/wr_done</obj_property>
+      <obj_property name="ObjectShortName">wr_done</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/arlen_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/arlen_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">arlen_i[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_address_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_address_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">avm_address_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_read_i" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_read_i</obj_property>
+      <obj_property name="ObjectShortName">avm_read_i</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/next_state" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/next_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_burstcount" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_burstcount[8:0]</obj_property>
+      <obj_property name="ObjectShortName">avm_burstcount[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_read" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_read</obj_property>
+      <obj_property name="ObjectShortName">avm_read</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_readdatavalid" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_readdatavalid</obj_property>
+      <obj_property name="ObjectShortName">avm_readdatavalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_waitrequest" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_waitrequest</obj_property>
+      <obj_property name="ObjectShortName">avm_waitrequest</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_write" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_write</obj_property>
+      <obj_property name="ObjectShortName">avm_write</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/avm_write_i" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/avm_write_i</obj_property>
+      <obj_property name="ObjectShortName">avm_write_i</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/awlen_i" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/awlen_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">awlen_i[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/current_state" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/current_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/rd_lat_done" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/rd_lat_done</obj_property>
+      <obj_property name="ObjectShortName">rd_lat_done</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/axi4_amm_slave_dma_isnt/wr_done" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/axi4_amm_slave_dma_isnt/wr_done</obj_property>
+      <obj_property name="ObjectShortName">wr_done</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/addra" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/addra[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/dina" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/dina[127:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/douta" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/douta[127:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/wea" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_1024D128W_bypassdma_isnt/wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_131072D128W_xdma_isnt/addra" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_131072D128W_xdma_isnt/addra[16:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[16:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_131072D128W_xdma_isnt/dina" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_131072D128W_xdma_isnt/dina[127:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_131072D128W_xdma_isnt/douta" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_131072D128W_xdma_isnt/douta[127:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="xdma_app_i/blk_mem_131072D128W_xdma_isnt/wea" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">xdma_app_i/blk_mem_131072D128W_xdma_isnt/wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

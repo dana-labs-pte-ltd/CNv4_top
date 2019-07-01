@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jun  6 09:21:59 2019
+# Process ID: 8352
+# Current directory: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/axi4_amm_bridge_synth_1
+# Command line: vivado.exe -log axi4_amm_bridge.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi4_amm_bridge.tcl
+# Log file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/axi4_amm_bridge_synth_1/axi4_amm_bridge.vds
+# Journal file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/axi4_amm_bridge_synth_1\vivado.jou
+#-----------------------------------------------------------
+source axi4_amm_bridge.tcl -notrace

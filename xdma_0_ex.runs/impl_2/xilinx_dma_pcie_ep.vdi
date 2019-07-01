@@ -1,0 +1,1131 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jun  6 16:22:09 2019
+# Process ID: 1036
+# Current directory: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2
+# Command line: vivado.exe -log xilinx_dma_pcie_ep.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source xilinx_dma_pcie_ep.tcl -notrace
+# Log file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep.vdi
+# Journal file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2\vivado.jou
+#-----------------------------------------------------------
+source xilinx_dma_pcie_ep.tcl -notrace
+Command: link_design -top xilinx_dma_pcie_ep -part xcvu9p-fsgd2104-2L-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'mem_clk_inst'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0.dcp' for cell 'xdma_0_i'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.dcp' for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.dcp' for cell 'xdma_app_i/axi4_lite_amm_bridge_inst'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D128W/blk_mem_1024D128W.dcp' for cell 'xdma_app_i/blk_mem_1024D128W_bypassdma_isnt'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D32W/blk_mem_1024D32W.dcp' for cell 'xdma_app_i/blk_mem_1024D32W_lite_isnt'
+INFO: [Project 1-454] Reading design checkpoint 'e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_131072D128W/blk_mem_131072D128W.dcp' for cell 'xdma_app_i/blk_mem_131072D128W_xdma_isnt'
+INFO: [Netlist 29-17] Analyzing 1332 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xcvu9p-fsgd2104-2L-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0_board.xdc] for cell 'xdma_0_i/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0_board.xdc] for cell 'xdma_0_i/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc] for cell 'xdma_0_i/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc] for cell 'xdma_0_i/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mem_clk_inst/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'mem_clk_inst/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mem_clk_inst/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 1982.895 ; gain = 340.590
+WARNING: [Vivado 12-2489] -input_jitter contains time 0.033330 which will be rounded to 0.033 to ensure it is an integer multiple of 1 picosecond [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'mem_clk_inst/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xdc] for cell 'xdma_app_i/axi4_lite_amm_bridge_inst/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xdc] for cell 'xdma_app_i/axi4_lite_amm_bridge_inst/inst'
+Parsing XDC File [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc]
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/avm_write_i_reg_n_0'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[2]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:417]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:417]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[6]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:418]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:418]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[8]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:419]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:419]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[9]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:420]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:420]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[15]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:421]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:421]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[0]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:422]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:422]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[5]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:423]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:423]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[12]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:424]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:424]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[13]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:425]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:425]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[14]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:426]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:426]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[10]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:427]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:427]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[11]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:428]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:428]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[1]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:429]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:429]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[3]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:430]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:430]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[4]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:431]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:431]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[7]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:432]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:432]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr_reg[16]_0[16]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:433]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:433]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[28]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:434]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:434]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[31]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:435]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:435]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[53]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:436]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:436]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[22]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:437]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:437]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[81]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:438]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:438]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[61]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:439]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:439]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[69]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:440]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:440]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[96]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:441]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:441]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[34]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:442]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:442]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[46]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:443]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:443]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[55]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:444]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:444]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[88]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:445]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:445]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[98]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:446]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:446]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[104]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:447]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:447]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[109]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:448]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:448]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[57]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:449]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:449]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[4]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:450]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:450]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[48]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:451]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:451]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[18]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:452]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:452]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[87]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:453]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:453]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[107]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:454]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:454]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[108]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:455]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:455]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[114]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:456]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:456]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[124]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:457]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:457]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[43]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:458]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:458]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[11]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:459]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:459]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[7]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:460]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:460]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[63]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:461]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:461]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[45]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:462]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:462]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[112]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:463]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:463]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[119]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:464]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:464]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[121]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:465]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:465]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[122]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:466]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:466]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[40]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:467]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:467]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[21]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:468]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:468]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[95]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:469]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:469]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[14]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:470]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:470]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[106]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:471]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:471]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[113]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:472]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:472]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[120]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:473]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:473]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[8]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:474]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:474]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[24]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:475]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:475]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[35]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:476]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:476]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[92]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:477]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:477]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[97]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:478]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:478]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[111]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:479]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:479]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[116]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:480]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:480]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[32]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:481]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:481]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[37]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:482]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:482]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[50]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:483]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:483]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[64]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:484]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:484]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[94]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:485]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:485]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[77]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:486]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:486]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[117]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:487]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:487]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[127]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:488]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:488]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[13]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:489]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:489]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[19]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:490]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:490]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[38]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:491]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:491]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[49]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:492]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:492]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[58]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:493]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:493]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[78]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:494]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:494]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[90]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:495]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:495]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[66]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:496]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:496]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[73]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:497]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:497]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[41]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:498]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:498]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[33]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:499]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:499]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[17]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:500]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:500]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[83]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:501]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:501]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[42]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:502]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:502]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[110]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:503]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:503]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[118]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:504]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:504]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[123]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:505]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:505]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[6]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:506]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:506]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[1]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:507]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:507]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[15]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:508]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:508]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[65]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:509]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:509]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[71]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:510]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:510]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[91]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:511]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:511]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[84]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:512]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:512]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[20]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:513]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:513]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[2]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:514]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:514]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_wdata_reg[127]_0[60]'. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:515]
+INFO: [Common 17-14] Message 'Vivado 12-507' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:515]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:515]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:515]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:1568]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:1569]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:1571]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:1573]
+CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_0' was not found. [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc:1574]
+Finished Parsing XDC File [E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc]
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/xdma_0_pcie4_ip_board.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/xdma_0_pcie4_ip_board.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc:63]
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc:63]
+INFO: [Timing 38-2] Deriving generated clocks [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc:63]
+Finished Parsing XDC File [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc] for cell 'xdma_0_i/inst/pcie4_ip_i/inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/user_lnk_up_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/user_lnk_up_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/user_reset_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'xdma_0_i/inst/pcie4_ip_i/inst/user_reset_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'xdma_0_i/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'xdma_0_i/inst/udma_wrapper/dma_top/base/IRQ_INST/usr_irq_xpm_cdc'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2298.230 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 297 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 22 instances
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 9 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 238 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 10 instances
+  RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 16 instances
+
+19 Infos, 104 Warnings, 105 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:01:02 ; elapsed = 00:00:53 . Memory (MB): peak = 2298.230 ; gain = 2000.527
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu9p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu9p'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.981 . Memory (MB): peak = 2298.230 ; gain = 0.000
+
+Starting Cache Timing Information Task
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Ending Cache Timing Information Task | Checksum: 1ecd9d0f3
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 2298.230 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_0 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_0_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_1 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_1_CV.
+INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:xsdbm:3.0", from Vivado IP cache entry "ec91c2b97975c3b8".
+INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "f37d2c1e426b9eac".
+INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "387617fda019ceb7".
+get_clocks: Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 2498.020 ; gain = 127.973
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.240 . Memory (MB): peak = 2499.105 ; gain = 0.992
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 946a94de
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 2499.961 ; gain = 155.508
+
+Phase 2 Retarget
+INFO: [Opt 31-138] Pushed 51 inverter(s) to 5997 load pin(s).
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell u_ila_1/inst/ila_core_inst/ila_trace_memory_inst/SUBCORE_RAM_BLK_MEM_1.trace_block_memory/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 16965a91b
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:56 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-389] Phase Retarget created 61 cells and removed 360 cells
+INFO: [Opt 31-1021] In phase Retarget, 633 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: cd679879
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:58 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-389] Phase Constant propagation created 843 cells and removed 1615 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 618 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 1859cd944
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 9023 cells
+INFO: [Opt 31-1021] In phase Sweep, 3196 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+Phase 5 BUFG optimization | Checksum: 1859cd944
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:01:19 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 6 Shift Register Optimization
+Phase 6 Shift Register Optimization | Checksum: 15216895f
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:01:31 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 15216895f
+
+Time (s): cpu = 00:01:16 ; elapsed = 00:01:32 . Memory (MB): peak = 2512.855 ; gain = 168.402
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 125 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              61  |             360  |                                            633  |
+|  Constant propagation         |             843  |            1615  |                                            618  |
+|  Sweep                        |               0  |            9023  |                                           3196  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            125  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.129 . Memory (MB): peak = 2512.855 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 15216895f
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 2512.855 ; gain = 168.402
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=2.316 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 20 BRAM(s) out of a total of 528 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 4 WE to EN ports
+Number of BRAM Ports augmented: 26 newly gated: 30 Total Ports: 1056
+Ending PowerOpt Patch Enables Task | Checksum: 1f5c84a35
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1f5c84a35
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:01:15 . Memory (MB): peak = 4982.020 ; gain = 2469.164
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Ending Logic Optimization Task | Checksum: 135267818
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 135267818
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 135267818
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+66 Infos, 116 Warnings, 105 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:04:05 ; elapsed = 00:03:19 . Memory (MB): peak = 4982.020 ; gain = 2683.789
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file xilinx_dma_pcie_ep_drc_opted.rpt -pb xilinx_dma_pcie_ep_drc_opted.pb -rpx xilinx_dma_pcie_ep_drc_opted.rpx
+Command: report_drc -file xilinx_dma_pcie_ep_drc_opted.rpt -pb xilinx_dma_pcie_ep_drc_opted.pb -rpx xilinx_dma_pcie_ep_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu9p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu9p'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: fca352c3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: d4e95cbc
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:26 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 14acad589
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 14acad589
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 14acad589
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:43 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+INFO: [Place 30-822] Clock net xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_CORECLK has a user defined clock root in clock region X5Y5. Therefore, clock net xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_PCLK2_GT will use a clock root in the same clock region, as these nets should have matching clock routes.
+Phase 2.1 Floorplanning | Checksum: 214147322
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:01:18 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 2.2 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2 Physical Synthesis In Placer | Checksum: 1c2f8d6f9
+
+Time (s): cpu = 00:04:30 ; elapsed = 00:03:20 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 119396f55
+
+Time (s): cpu = 00:04:42 ; elapsed = 00:03:32 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: f72e5d7d
+
+Time (s): cpu = 00:04:43 ; elapsed = 00:03:32 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1875f9457
+
+Time (s): cpu = 00:04:53 ; elapsed = 00:03:40 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 19077e5e2
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:03:40 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.4 Small Shape Clustering
+Phase 3.4 Small Shape Clustering | Checksum: 1f7cd8e8f
+
+Time (s): cpu = 00:05:02 ; elapsed = 00:03:47 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.5 Flow Legalize Slice Clusters
+Phase 3.5 Flow Legalize Slice Clusters | Checksum: 17e831f51
+
+Time (s): cpu = 00:05:04 ; elapsed = 00:03:48 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.6 Slice Area Swap
+Phase 3.6 Slice Area Swap | Checksum: 20926813c
+
+Time (s): cpu = 00:05:09 ; elapsed = 00:03:52 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.7 Commit Slice Clusters
+Phase 3.7 Commit Slice Clusters | Checksum: 18e3f94d9
+
+Time (s): cpu = 00:05:19 ; elapsed = 00:03:58 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 1d90311a8
+
+Time (s): cpu = 00:05:22 ; elapsed = 00:04:02 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 110310320
+
+Time (s): cpu = 00:05:23 ; elapsed = 00:04:03 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 110310320
+
+Time (s): cpu = 00:05:24 ; elapsed = 00:04:03 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1527e75b7
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-46] BUFG insertion identified 0 candidate nets, 0 success, 0 bufg driver replicated, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1527e75b7
+
+Time (s): cpu = 00:06:06 ; elapsed = 00:04:33 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 4.1.1.2 BUFG Replication
+Phase 4.1.1.2 BUFG Replication | Checksum: 1527e75b7
+
+Time (s): cpu = 00:06:06 ; elapsed = 00:04:33 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.190. For the most accurate timing information please run report_timing.
+
+Phase 4.1.1.3 Replication
+INFO: [Place 46-19] Post Replication Timing Summary WNS=1.190. For the most accurate timing information please run report_timing.
+Phase 4.1.1.3 Replication | Checksum: 138c8f680
+
+Time (s): cpu = 00:06:07 ; elapsed = 00:04:34 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 4.1.1 Post Placement Optimization | Checksum: 138c8f680
+
+Time (s): cpu = 00:06:08 ; elapsed = 00:04:35 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 138c8f680
+
+Time (s): cpu = 00:06:08 ; elapsed = 00:04:35 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 138c8f680
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:04:36 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 1764b1f9f
+
+Time (s): cpu = 00:06:44 ; elapsed = 00:05:11 . Memory (MB): peak = 4982.020 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 12cfadfe1
+
+Time (s): cpu = 00:06:44 ; elapsed = 00:05:11 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 12cfadfe1
+
+Time (s): cpu = 00:06:45 ; elapsed = 00:05:11 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Ending Placer Task | Checksum: f1919227
+
+Time (s): cpu = 00:06:45 ; elapsed = 00:05:11 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+97 Infos, 122 Warnings, 105 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:06:49 ; elapsed = 00:05:14 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file xilinx_dma_pcie_ep_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.221 . Memory (MB): peak = 4982.020 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file xilinx_dma_pcie_ep_utilization_placed.rpt -pb xilinx_dma_pcie_ep_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file xilinx_dma_pcie_ep_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.184 . Memory (MB): peak = 4982.020 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu9p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu9p'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 669418f9 ConstDB: 0 ShapeSum: 4d7b500f RouteDB: 3d82291f
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1cf5378e8
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:23 . Memory (MB): peak = 5156.738 ; gain = 174.719
+Post Restoration Checksum: NetGraph: 7acacffa NumContArr: c9c8c990 Constraints: b5fbfef Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 14ff35979
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:23 . Memory (MB): peak = 5156.738 ; gain = 174.719
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 14ff35979
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:23 . Memory (MB): peak = 5156.738 ; gain = 174.719
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 14ff35979
+
+Time (s): cpu = 00:03:24 ; elapsed = 00:02:23 . Memory (MB): peak = 5156.738 ; gain = 174.719
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 17367cff1
+
+Time (s): cpu = 00:03:34 ; elapsed = 00:02:33 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: 233fc4640
+
+Time (s): cpu = 00:04:02 ; elapsed = 00:02:50 . Memory (MB): peak = 5592.086 ; gain = 610.066
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.270  | TNS=0.000  | WHS=-0.473 | THS=-204.135|
+
+
+Phase 2.6 Update Timing for Bus Skew
+
+Phase 2.6.1 Update Timing
+Phase 2.6.1 Update Timing | Checksum: 1b158731b
+
+Time (s): cpu = 00:04:37 ; elapsed = 00:03:12 . Memory (MB): peak = 5592.086 ; gain = 610.066
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.270  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 2.6 Update Timing for Bus Skew | Checksum: 1911ac149
+
+Time (s): cpu = 00:04:37 ; elapsed = 00:03:12 . Memory (MB): peak = 5592.086 ; gain = 610.066
+Phase 2 Router Initialization | Checksum: 1d4ad7acb
+
+Time (s): cpu = 00:04:38 ; elapsed = 00:03:12 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1c4c4458b
+
+Time (s): cpu = 00:05:17 ; elapsed = 00:03:45 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 9687
+ Number of Nodes with overlaps = 774
+ Number of Nodes with overlaps = 87
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.719  | TNS=0.000  | WHS=-0.012 | THS=-0.048 |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1fb6b0c10
+
+Time (s): cpu = 00:06:42 ; elapsed = 00:04:41 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.719  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 17abd09aa
+
+Time (s): cpu = 00:06:52 ; elapsed = 00:04:50 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 90
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.719  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 27c5529ec
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:05:00 . Memory (MB): peak = 5592.086 ; gain = 610.066
+Phase 4 Rip-up And Reroute | Checksum: 27c5529ec
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:05:01 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 23096f6cf
+
+Time (s): cpu = 00:07:03 ; elapsed = 00:05:01 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 23096f6cf
+
+Time (s): cpu = 00:07:04 ; elapsed = 00:05:01 . Memory (MB): peak = 5592.086 ; gain = 610.066
+Phase 5 Delay and Skew Optimization | Checksum: 23096f6cf
+
+Time (s): cpu = 00:07:04 ; elapsed = 00:05:01 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 238255004
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:05:09 . Memory (MB): peak = 5592.086 ; gain = 610.066
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.719  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1f1e56cda
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:05:09 . Memory (MB): peak = 5592.086 ; gain = 610.066
+Phase 6 Post Hold Fix | Checksum: 1f1e56cda
+
+Time (s): cpu = 00:07:16 ; elapsed = 00:05:09 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.937749 %
+  Global Horizontal Routing Utilization  = 0.878673 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1ef371157
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:11 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1ef371157
+
+Time (s): cpu = 00:07:19 ; elapsed = 00:05:11 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 9 Depositing Routes
+INFO: [Route 35-467] Router swapped GT pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[32].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00 to physical pin GTYE4_COMMON_X1Y8/COM0_REFCLKOUT3
+INFO: [Route 35-467] Router swapped GT pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[32].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK01 to physical pin GTYE4_COMMON_X1Y8/COM2_REFCLKOUT3
+INFO: [Route 35-467] Router swapped GT pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTYE4_CHANNEL_X1Y34/NORTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTYE4_CHANNEL_X1Y35/NORTHREFCLK1
+Phase 9 Depositing Routes | Checksum: 1ef371157
+
+Time (s): cpu = 00:07:23 ; elapsed = 00:05:16 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.719  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1ef371157
+
+Time (s): cpu = 00:07:23 ; elapsed = 00:05:16 . Memory (MB): peak = 5592.086 ; gain = 610.066
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:07:23 ; elapsed = 00:05:16 . Memory (MB): peak = 5592.086 ; gain = 610.066
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+121 Infos, 122 Warnings, 105 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:07:29 ; elapsed = 00:05:20 . Memory (MB): peak = 5592.086 ; gain = 610.066
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.026 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 5592.086 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file xilinx_dma_pcie_ep_drc_routed.rpt -pb xilinx_dma_pcie_ep_drc_routed.pb -rpx xilinx_dma_pcie_ep_drc_routed.rpx
+Command: report_drc -file xilinx_dma_pcie_ep_drc_routed.rpt -pb xilinx_dma_pcie_ep_drc_routed.pb -rpx xilinx_dma_pcie_ep_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_methodology -file xilinx_dma_pcie_ep_methodology_drc_routed.rpt -pb xilinx_dma_pcie_ep_methodology_drc_routed.pb -rpx xilinx_dma_pcie_ep_methodology_drc_routed.rpx
+Command: report_methodology -file xilinx_dma_pcie_ep_methodology_drc_routed.rpt -pb xilinx_dma_pcie_ep_methodology_drc_routed.pb -rpx xilinx_dma_pcie_ep_methodology_drc_routed.rpx
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:45 ; elapsed = 00:00:28 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_power -file xilinx_dma_pcie_ep_power_routed.rpt -pb xilinx_dma_pcie_ep_power_summary_routed.pb -rpx xilinx_dma_pcie_ep_power_routed.rpx
+Command: report_power -file xilinx_dma_pcie_ep_power_routed.rpt -pb xilinx_dma_pcie_ep_power_summary_routed.pb -rpx xilinx_dma_pcie_ep_power_routed.rpx
+WARNING: [Constraints 18-633] Creating clock xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK with 2 sources. [e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+WARNING: [Timing 38-3] User defined clock exists on pin xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[32].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK [See e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc:120] and will prevent any subsequent automatic derivation of generated clocks on that pin. If the user defined clock specifies '-add', any existing auto-derived clocks on that pin are retained.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+133 Infos, 129 Warnings, 105 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:34 ; elapsed = 00:00:21 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_route_status -file xilinx_dma_pcie_ep_route_status.rpt -pb xilinx_dma_pcie_ep_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file xilinx_dma_pcie_ep_timing_summary_routed.rpt -pb xilinx_dma_pcie_ep_timing_summary_routed.pb -rpx xilinx_dma_pcie_ep_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file xilinx_dma_pcie_ep_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file xilinx_dma_pcie_ep_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 5592.086 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file xilinx_dma_pcie_ep_bus_skew_routed.rpt -pb xilinx_dma_pcie_ep_bus_skew_routed.pb -rpx xilinx_dma_pcie_ep_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  6 16:38:53 2019...
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jun  6 16:41:16 2019
+# Process ID: 7040
+# Current directory: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2
+# Command line: vivado.exe -log xilinx_dma_pcie_ep.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source xilinx_dma_pcie_ep.tcl -notrace
+# Log file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2/xilinx_dma_pcie_ep.vdi
+# Journal file: E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.runs/impl_2\vivado.jou
+#-----------------------------------------------------------
+source xilinx_dma_pcie_ep.tcl -notrace
+Command: open_checkpoint xilinx_dma_pcie_ep_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 258.141 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2029 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xcvu9p-fsgd2104-2L-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2083.324 ; gain = 39.320
+Restored from archive | CPU: 6.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2083.324 ; gain = 39.320
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2083.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 767 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 492 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 22 instances
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 9 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 217 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 10 instances
+  RAM64M8 => RAM64M8 (RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E, RAMD64E): 16 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2018.3 (64-bit) build 2405991
+open_checkpoint: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2083.324 ; gain = 1825.184
+INFO: [Memdata 28-208] The XPM instance: <xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <xdma_app_i/axi4_amm_bridge_dma_inst>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-167] Found XPM memory block xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <xdma_app_i/axi4_amm_bridge_dma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <xdma_app_i/axi4_amm_bridge_dma_inst>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rresp_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <xdma_app_i/axi4_amm_bridge_bypassdma_inst>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-167] Found XPM memory block xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rid_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <xdma_app_i/axi4_amm_bridge_bypassdma_inst/inst/AXI_FULL.I_AVA_MASTER_FULL/ava_sync_rdata_fifo/xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <xdma_app_i/axi4_amm_bridge_bypassdma_inst>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+Command: write_bitstream -force xilinx_dma_pcie_ep.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu9p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu9p'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RTSTAT-10] No routable loads: 88 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[10], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[11], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[12], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[13], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[14], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[15], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[16], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[17], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[17], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[18], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[18]... and (the first 15 of 68 listed).
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[0].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[1].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[2].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[3].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[4].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_0_int/ECC_RAM.RAMB36E2[5].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[0].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[1].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[2].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[3].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[4].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/RAM32K.bram_comp_inst/bram_16k_1_int/ECC_RAM.RAMB36E2[5].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[0].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[1].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[2].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[3].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[4].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_post_inst/bram_16k_int/ECC_RAM.RAMB36E2[5].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_repl_inst/bram_rep_int_0/ECC_RAM.RAMB36E2[0].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_repl_inst/bram_rep_int_0/ECC_RAM.RAMB36E2[1].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_repl_inst/bram_rep_int_0/ECC_RAM.RAMB36E2[2].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [DRC REQP-1858] RAMB36E2_writefirst_collision_advisory: Synchronous clocking is detected for BRAM (xdma_0_i/inst/pcie4_ip_i/inst/pcie_4_0_pipe_inst/pcie_4_0_bram_inst/bram_repl_inst/bram_rep_int_0/ECC_RAM.RAMB36E2[3].ramb36e2_inst) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings, 22 Advisories
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 162535840 bits.
+Bitstream compression saved 162682464 bits.
+Bitstream compression saved 110023904 bits.
+Writing bitstream ./xilinx_dma_pcie_ep.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:02:27 ; elapsed = 00:01:51 . Memory (MB): peak = 3234.586 ; gain = 1151.262
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  6 16:43:45 2019...
