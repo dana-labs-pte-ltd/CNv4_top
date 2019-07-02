@@ -581,8 +581,8 @@ endfunction
       bx0 <= in_bx0;
       bx1 <= in_bx1;
     end else if(phase_4_randommath_ack) begin
-      al0 <= al0 + 1;
-      ah0 <= ah0 + 1;
+      al0 <= al0 ^ (r0[2] | (r0[3] << 32));
+      ah0 <= ah0 ^ (r0[0] | (r0[1] << 32));
     end else if(phase_5_mul_ack) begin
       al0 <= al0 + hi;
       ah0 <= ah0 + lo;
@@ -594,13 +594,47 @@ endfunction
       bx1 <= bx0;
     end
   end
-  
-    always @(posedge clk or negedge reset_n)
+
+  //r0 update
+  always @(posedge clk or negedge reset_n)
+  if (!reset_n) begin
+    r0[0] <= 32'h0;
+    r0[1] <= 32'h0;
+    r0[2] <= 32'h0;
+    r0[3] <= 32'h0;
+    r0[4] <= 32'h0;
+    r0[5] <= 32'h0;
+    r0[6] <= 32'h0;
+    r0[7] <= 32'h0;
+    r0[8] <= 32'h0;
+  end else begin
+    if(cs_state == phase_idle && ns_state == phase_0_read_stage_1)begin//start iteration
+        r0[0] <= in_r0[0];
+        r0[1] <= in_r0[1];
+        r0[2] <= in_r0[2];
+        r0[3] <= in_r0[3];
+    end else if(phase_4_randommath_ack) begin
+        r0[0] <= out_r0[0];
+        r0[1] <= out_r0[1];
+        r0[2] <= out_r0[2];
+        r0[3] <= out_r0[3];
+    end else if(ns_state == phase_4_randommath_stage_2 && cs_state == phase_3_read_stage_2) begin
+        r0[4] <= al0[31:0];
+        r0[5] <= ah0[31:0]; 
+        r0[6] <= bx0[31:0]; 
+        r0[7] <= bx1[31:0]; 
+        r0[8] <= bx1[95:64]; 
+    end
+  end
+ 
+
+  //this place can optmize in future 
+  always @(posedge clk or negedge reset_n)
   if (!reset_n) begin
     cl <= 0;
   end else begin
-    if(phase_4_randommath_ack) begin
-      cl <= cx_before_aes[63:0] + 1;
+    if(ns_state == phase_4_randommath_stage_2 && cs_state == phase_3_read_stage_2) begin
+      cl <= cx_before_aes[63:0] ^ ((r0[0] + r0[1]) | ((r0[2] + r0[3]) << 32));
     end
   end
   
