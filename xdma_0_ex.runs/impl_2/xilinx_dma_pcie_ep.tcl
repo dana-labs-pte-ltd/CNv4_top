@@ -61,26 +61,101 @@ proc step_failed { step } {
 }
 
 
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
+start_step init_design
+set ACTIVE_STEP init_design
 set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param xicom.use_bs_reader 1
-  open_checkpoint xilinx_dma_pcie_ep_routed.dcp
-  set_property webtalk.parent_dir E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.cache/wt [current_project]
+  create_msg_db init_design.pb
+  create_project -in_memory -part xcvu9p-fsgd2104-2L-e
+  set_property board_part xilinx.com:vcu1525:part0:1.2 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+  set_property webtalk.parent_dir /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.cache/wt [current_project]
+  set_property parent.project_path /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.xpr [current_project]
+  set_property ip_output_repo /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.cache/ip [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  catch { write_mem_info -force xilinx_dma_pcie_ep.mmi }
-  write_bitstream -force xilinx_dma_pcie_ep.bit 
-  catch {write_debug_probes -quiet -force xilinx_dma_pcie_ep}
-  catch {file copy -force xilinx_dma_pcie_ep.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
+  add_files -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/xilinx_dma_pcie_ep.dcp
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/mult_64wx64w_unsigned/mult_64wx64w_unsigned.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_32768D128W/blk_mem_32768D128W.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi_clock_converter_128D32AW/axi_clock_converter_128D32AW.xci
+  read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axilite_clock_converter_32d32aw/axilite_clock_converter_32d32aw.xci
+  read_xdc /media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_pcie_xdma_ref_board.xdc
+  link_design -top xilinx_dma_pcie_ep -part xcvu9p-fsgd2104-2L-e
+  close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
-  step_failed write_bitstream
+  step_failed init_design
   return -code error $RESULT
 } else {
-  end_step write_bitstream
+  end_step init_design
+  unset ACTIVE_STEP 
+}
+
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+  opt_design 
+  write_checkpoint -force xilinx_dma_pcie_ep_opt.dcp
+  create_report "impl_2_opt_report_drc_0" "report_drc -file xilinx_dma_pcie_ep_drc_opted.rpt -pb xilinx_dma_pcie_ep_drc_opted.pb -rpx xilinx_dma_pcie_ep_drc_opted.rpx"
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
+start_step place_design
+set ACTIVE_STEP place_design
+set rc [catch {
+  create_msg_db place_design.pb
+  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
+    implement_debug_core 
+  } 
+  place_design 
+  write_checkpoint -force xilinx_dma_pcie_ep_placed.dcp
+  create_report "impl_2_place_report_io_0" "report_io -file xilinx_dma_pcie_ep_io_placed.rpt"
+  create_report "impl_2_place_report_utilization_0" "report_utilization -file xilinx_dma_pcie_ep_utilization_placed.rpt -pb xilinx_dma_pcie_ep_utilization_placed.pb"
+  create_report "impl_2_place_report_control_sets_0" "report_control_sets -verbose -file xilinx_dma_pcie_ep_control_sets_placed.rpt"
+  close_msg_db -file place_design.pb
+} RESULT]
+if {$rc} {
+  step_failed place_design
+  return -code error $RESULT
+} else {
+  end_step place_design
+  unset ACTIVE_STEP 
+}
+
+start_step route_design
+set ACTIVE_STEP route_design
+set rc [catch {
+  create_msg_db route_design.pb
+  route_design 
+  write_checkpoint -force xilinx_dma_pcie_ep_routed.dcp
+  create_report "impl_2_route_report_drc_0" "report_drc -file xilinx_dma_pcie_ep_drc_routed.rpt -pb xilinx_dma_pcie_ep_drc_routed.pb -rpx xilinx_dma_pcie_ep_drc_routed.rpx"
+  create_report "impl_2_route_report_methodology_0" "report_methodology -file xilinx_dma_pcie_ep_methodology_drc_routed.rpt -pb xilinx_dma_pcie_ep_methodology_drc_routed.pb -rpx xilinx_dma_pcie_ep_methodology_drc_routed.rpx"
+  create_report "impl_2_route_report_power_0" "report_power -file xilinx_dma_pcie_ep_power_routed.rpt -pb xilinx_dma_pcie_ep_power_summary_routed.pb -rpx xilinx_dma_pcie_ep_power_routed.rpx"
+  create_report "impl_2_route_report_route_status_0" "report_route_status -file xilinx_dma_pcie_ep_route_status.rpt -pb xilinx_dma_pcie_ep_route_status.pb"
+  create_report "impl_2_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file xilinx_dma_pcie_ep_timing_summary_routed.rpt -pb xilinx_dma_pcie_ep_timing_summary_routed.pb -rpx xilinx_dma_pcie_ep_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_2_route_report_incremental_reuse_0" "report_incremental_reuse -file xilinx_dma_pcie_ep_incremental_reuse_routed.rpt"
+  create_report "impl_2_route_report_clock_utilization_0" "report_clock_utilization -file xilinx_dma_pcie_ep_clock_utilization_routed.rpt"
+  create_report "impl_2_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file xilinx_dma_pcie_ep_bus_skew_routed.rpt -pb xilinx_dma_pcie_ep_bus_skew_routed.pb -rpx xilinx_dma_pcie_ep_bus_skew_routed.rpx"
+  close_msg_db -file route_design.pb
+} RESULT]
+if {$rc} {
+  write_checkpoint -force xilinx_dma_pcie_ep_routed_error.dcp
+  step_failed route_design
+  return -code error $RESULT
+} else {
+  end_step route_design
   unset ACTIVE_STEP 
 }
 

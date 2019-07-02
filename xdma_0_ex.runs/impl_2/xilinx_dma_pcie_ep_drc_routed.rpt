@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Jun  6 16:37:48 2019
-| Host         : IT-20181130VVYG running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Tue Jul  2 11:42:12 2019
+| Host         : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_drc -file xilinx_dma_pcie_ep_drc_routed.rpt -pb xilinx_dma_pcie_ep_drc_routed.pb -rpx xilinx_dma_pcie_ep_drc_routed.rpx
 | Design       : xilinx_dma_pcie_ep
 | Device       : xcvu9p-fsgd2104-2L-e
@@ -24,19 +24,25 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 23
-+-----------+----------+----------------------------------------+------------+
-| Rule      | Severity | Description                            | Violations |
-+-----------+----------+----------------------------------------+------------+
-| RTSTAT-10 | Warning  | No routable loads                      | 1          |
-| REQP-1858 | Advisory | RAMB36E2_writefirst_collision_advisory | 22         |
-+-----------+----------+----------------------------------------+------------+
+             Violations found: 24
++-----------+------------------+----------------------------------------+------------+
+| Rule      | Severity         | Description                            | Violations |
++-----------+------------------+----------------------------------------+------------+
+| UCIO-1    | Critical Warning | Unconstrained Logical Port             | 1          |
+| RTSTAT-10 | Warning          | No routable loads                      | 1          |
+| REQP-1858 | Advisory         | RAMB36E2_writefirst_collision_advisory | 22         |
++-----------+------------------+----------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+UCIO-1#1 Critical Warning
+Unconstrained Logical Port  
+2 out of 16 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: free_run_clock_n_in, free_run_clock_p_in.
+Related violations: <none>
+
 RTSTAT-10#1 Warning
 No routable loads  
-88 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[10], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[11], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[12], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[13], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[14], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[15], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[16], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[17], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[17], xdma_app_i/axi4_amm_slave_bypassdma_isnt/local_mem_addr[18], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[18] (the first 15 of 68 listed).
+40 net(s) have no routable loads. The problem bus(es) and/or net(s) are xdma_app_i/axi_clock_converter_128D32AW_inst/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwrch2.axi_wrch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, xdma_app_i/axi_clock_converter_128D32AW_inst/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, xdma_app_i/axi_clock_converter_128D32AW_inst/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, xdma_app_i/axi_clock_converter_128D32AW_inst/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, xdma_app_i/axi_clock_converter_128D32AW_inst/inst/gen_clock_conv.gen_async_conv.asyncfifo_axi/inst_fifo_gen/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[17], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[18], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[19], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[20], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[21], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[22], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[23], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[24], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[25], xdma_app_i/axi4_amm_slave_dma_isnt/local_mem_addr[26] (the first 15 of 31 listed).
 Related violations: <none>
 
 REQP-1858#1 Advisory

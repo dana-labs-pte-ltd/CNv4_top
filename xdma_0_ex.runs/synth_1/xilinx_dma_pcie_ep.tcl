@@ -17,62 +17,71 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xcvu9p-fsgd2104-2L-e
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.cache/wt [current_project]
-set_property parent.project_path E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.xpr [current_project]
+set_property webtalk.parent_dir /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.cache/wt [current_project]
+set_property parent.project_path /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:vcu1525:part0:1.2 [current_project]
-set_property ip_output_repo e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.cache/ip [current_project]
+set_property ip_output_repo /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib -sv E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_dma_pcie_ep.sv
+read_verilog /media/wanner/work/work/fpga_prj/CNv4_top/imports/cn.vh
+read_verilog -library xil_defaultlib -sv /media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_dma_pcie_ep.sv
 read_verilog -library xil_defaultlib {
-  E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/axi4_amm_slave.v
-  E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/axi4_lite_amm_slave.v
-  E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xdma_app.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_amm_slave.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_lite_amm_slave.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v
 }
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/synth/xdma_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/xdma_0_pcie4_ip_board.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_1/xdma_v4_1_2_blk_mem_64_reg_be_ooc.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_2/xdma_v4_1_2_blk_mem_64_noreg_be_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/mult_64wx64w_unsigned/mult_64wx64w_unsigned.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/mult_64wx64w_unsigned/mult_64wx64w_unsigned_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_131072D128W/blk_mem_131072D128W.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_131072D128W/blk_mem_131072D128W_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/xdma_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/source/xdma_0_pcie4_uscaleplus_ip.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/synth/xdma_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/xdma_0_pcie4_ip_board.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/synth/xdma_0_pcie4_ip_late.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/source/ip_pcie4_uscale_plus_x1y2.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_0/ip_0/synth/xdma_0_pcie4_ip_gt.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_1/xdma_v4_1_2_blk_mem_64_reg_be_ooc.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/xdma_0/ip_2/xdma_v4_1_2_blk_mem_64_noreg_be_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D128W/blk_mem_1024D128W.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D128W/blk_mem_1024D128W_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D32W/blk_mem_1024D32W.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_1024D32W/blk_mem_1024D32W_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_32768D128W/blk_mem_32768D128W.xci
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/blk_mem_32768D128W/blk_mem_32768D128W_ooc.xdc]
 
-read_ip -quiet E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xci
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge.xdc]
-set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/xdma_0_ex.srcs/sources_1/ip/axi4_lite_amm_bridge/axi4_lite_amm_bridge_ooc.xdc]
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi_clock_converter_128D32AW/axi_clock_converter_128D32AW.xci
+set_property used_in_synthesis false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi_clock_converter_128D32AW/axi_clock_converter_128D32AW_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi_clock_converter_128D32AW/axi_clock_converter_128D32AW_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axi_clock_converter_128D32AW/axi_clock_converter_128D32AW_ooc.xdc]
+
+read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axilite_clock_converter_32d32aw/axilite_clock_converter_32d32aw.xci
+set_property used_in_synthesis false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axilite_clock_converter_32d32aw/axilite_clock_converter_32d32aw_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axilite_clock_converter_32d32aw/axilite_clock_converter_32d32aw_clocks.xdc]
+set_property used_in_implementation false [get_files -all /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/axilite_clock_converter_32d32aw/axilite_clock_converter_32d32aw_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -82,8 +91,8 @@ set_property used_in_implementation false [get_files -all e:/work/fpga_vcu1525/f
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc
-set_property used_in_implementation false [get_files E:/work/fpga_vcu1525/fpga_pcie/cryptonight_pcie_top/imports/xilinx_pcie_xdma_ref_board.xdc]
+read_xdc /media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_pcie_xdma_ref_board.xdc
+set_property used_in_implementation false [get_files /media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_pcie_xdma_ref_board.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

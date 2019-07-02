@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jul  2 11:30:11 2019
+# Process ID: 458
+# Current directory: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/axilite_clock_converter_32d32aw_synth_1
+# Command line: vivado -log axilite_clock_converter_32d32aw.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axilite_clock_converter_32d32aw.tcl
+# Log file: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/axilite_clock_converter_32d32aw_synth_1/axilite_clock_converter_32d32aw.vds
+# Journal file: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/axilite_clock_converter_32d32aw_synth_1/vivado.jou
+#-----------------------------------------------------------
+source axilite_clock_converter_32d32aw.tcl -notrace

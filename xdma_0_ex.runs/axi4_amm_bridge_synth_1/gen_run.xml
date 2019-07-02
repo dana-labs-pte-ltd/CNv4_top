@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="axi4_amm_bridge_synth_1" LaunchPart="xcvu9p-fsgd2104-2L-e" LaunchTime="1559784118">
   <File Type="PA-TCL" Name="axi4_amm_bridge.tcl"/>
+  <File Type="RDS-DCP" Name="axi4_amm_bridge.dcp"/>
   <File Type="REPORTS-TCL" Name="axi4_amm_bridge_reports.tcl"/>
   <File Type="RDS-RDS" Name="axi4_amm_bridge.vds"/>
   <File Type="RDS-UTIL" Name="axi4_amm_bridge_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="axi4_amm_bridge_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="axi4_amm_bridge.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi4_amm_bridge">
     <File Path="$PSRCDIR/sources_1/ip/axi4_amm_bridge/axi4_amm_bridge.xci">
       <FileInfo>

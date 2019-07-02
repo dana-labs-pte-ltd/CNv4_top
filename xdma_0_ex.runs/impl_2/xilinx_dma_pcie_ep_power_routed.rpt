@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Thu Jun  6 16:38:37 2019
-| Host             : IT-20181130VVYG running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date             : Tue Jul  2 11:42:28 2019
+| Host             : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file xilinx_dma_pcie_ep_power_routed.rpt -pb xilinx_dma_pcie_ep_power_summary_routed.pb -rpx xilinx_dma_pcie_ep_power_routed.rpx
 | Design           : xilinx_dma_pcie_ep
 | Device           : xcvu9p-fsgd2104-2L-e
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.013        |
+| Total On-Chip Power (W)  | 3.789        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.445        |
-| Device Static (W)        | 2.568        |
+| Dynamic (W)              | 1.227        |
+| Device Static (W)        | 2.562        |
 | Effective TJA (C/W)      | 0.5          |
-| Max Ambient (C)          | 97.9         |
-| Junction Temperature (C) | 27.1         |
+| Max Ambient (C)          | 98.0         |
+| Junction Temperature (C) | 27.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.155 |       14 |       --- |             --- |
-| CLB Logic                |     0.025 |    55749 |       --- |             --- |
-|   LUT as Logic           |     0.013 |    17640 |   1182240 |            1.49 |
-|   LUT as Shift Register  |     0.006 |      932 |    591840 |            0.16 |
-|   Register               |     0.004 |    26066 |   2364480 |            1.10 |
-|   LUT as Distributed RAM |     0.002 |     1940 |    591840 |            0.33 |
-|   CARRY8                 |    <0.001 |      393 |    147780 |            0.27 |
-|   Others                 |     0.000 |     1718 |       --- |             --- |
-|   F7/F8 Muxes            |     0.000 |      896 |   1182240 |            0.08 |
-| Signals                  |     0.077 |    47500 |       --- |             --- |
-| Block RAM                |     0.401 |    525.5 |      2160 |           24.33 |
-| I/O                      |     0.007 |        4 |       676 |            0.59 |
+| Clocks                   |     0.098 |       14 |       --- |             --- |
+| CLB Logic                |     0.017 |    40735 |       --- |             --- |
+|   LUT as Logic           |     0.010 |    13536 |   1182240 |            1.14 |
+|   LUT as Distributed RAM |     0.003 |     2020 |    591840 |            0.34 |
+|   Register               |     0.003 |    18885 |   2364480 |            0.80 |
+|   CARRY8                 |    <0.001 |      285 |    147780 |            0.19 |
+|   LUT as Shift Register  |    <0.001 |       11 |    591840 |           <0.01 |
+|   Others                 |     0.000 |      723 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |      363 |   1182240 |            0.03 |
+| Signals                  |     0.065 |    33850 |       --- |             --- |
+| Block RAM                |     0.209 |    156.5 |      2160 |            7.25 |
+| PLL                      |     0.049 |        1 |       --- |             --- |
+| I/O                      |     0.009 |        6 |       676 |            0.89 |
 | GTY                      |     0.653 |        2 |        76 |            2.63 |
 | Hard IPs                 |     0.126 |        1 |       --- |             --- |
 |   PCIE                   |     0.126 |        1 |       --- |             --- |
-| Static Power             |     2.568 |          |           |                 |
-| Total                    |     4.013 |          |           |                 |
+| Static Power             |     2.562 |          |           |                 |
+| Total                    |     3.789 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,11 +79,11 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +------------+-------------+-----------+-------------+------------+
-| Vccint     |       0.850 |     1.814 |       0.978 |      0.836 |
+| Vccint     |       0.850 |     1.494 |       0.666 |      0.829 |
 | Vccint_io  |       0.850 |     0.264 |       0.001 |      0.263 |
-| Vccbram    |       0.850 |     0.048 |       0.032 |      0.016 |
-| Vccaux     |       1.800 |     0.649 |       0.000 |      0.649 |
-| Vccaux_io  |       1.800 |     0.188 |       0.003 |      0.185 |
+| Vccbram    |       0.850 |     0.043 |       0.028 |      0.016 |
+| Vccaux     |       1.800 |     0.677 |       0.027 |      0.649 |
+| Vccaux_io  |       1.800 |     0.189 |       0.004 |      0.185 |
 | Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18     |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -137,7 +138,8 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | Clock                                                                                                                                                                                                                                                                                                                                                                                         | Domain                                                                                                                                                                                                                                                                                                                                                                         | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK                                                                                                                                                                                                                                                                                           | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/in0                                                                                                                                                                                                                                                                                                              |            50.0 |
+| clk_out2_clk_wiz_0                                                                                                                                                                                                                                                                                                                                                                            | mem_clk_inst/inst/clk_out2_clk_wiz_0                                                                                                                                                                                                                                                                                                                                           |            13.3 |
+| free_run_clock_p_in                                                                                                                                                                                                                                                                                                                                                                           | free_run_clock_p_in                                                                                                                                                                                                                                                                                                                                                            |             3.3 |
 | qpll0outclk_out[0]                                                                                                                                                                                                                                                                                                                                                                            | xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[32].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/qpll0outclk_out[0]                                                     |             0.2 |
 | qpll0outrefclk_out[0]                                                                                                                                                                                                                                                                                                                                                                         | xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[32].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/qpll0outrefclk_out[0]                                                  |            10.0 |
 | qpll1outclk_out[0]                                                                                                                                                                                                                                                                                                                                                                            | xdma_0_i/inst/pcie4_ip_i/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/xdma_0_pcie4_ip_gt_i/inst/gen_gtwizard_gtye4_top.xdma_0_pcie4_ip_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[32].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/qpll1outclk_out[0]                                                     |             0.2 |
@@ -158,37 +160,27 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------------------+-----------+
-| Name                                 | Power (W) |
-+--------------------------------------+-----------+
-| xilinx_dma_pcie_ep                   |     1.445 |
-|   dbg_hub                            |     0.004 |
-|     inst                             |     0.004 |
-|       BSCANID.u_xsdbm_id             |     0.004 |
-|   u_ila_0                            |     0.066 |
-|     inst                             |     0.066 |
-|       ila_core_inst                  |     0.066 |
-|   u_ila_1                            |     0.011 |
-|     inst                             |     0.011 |
-|       ila_core_inst                  |     0.011 |
-|   xdma_0_i                           |     1.142 |
-|     inst                             |     1.142 |
-|       pcie4_ip_i                     |     1.025 |
-|       ram_top                        |     0.028 |
-|       udma_wrapper                   |     0.090 |
-|   xdma_app_i                         |     0.214 |
-|     axi4_amm_bridge_bypassdma_inst   |     0.002 |
-|       inst                           |     0.002 |
-|     axi4_amm_bridge_dma_inst         |     0.003 |
-|       inst                           |     0.003 |
-|     axi4_amm_slave_bypassdma_isnt    |     0.003 |
-|     axi4_amm_slave_dma_isnt          |     0.008 |
-|     blk_mem_1024D128W_bypassdma_isnt |     0.007 |
-|       U0                             |     0.007 |
-|     blk_mem_1024D32W_lite_isnt       |     0.001 |
-|       U0                             |     0.001 |
-|     blk_mem_131072D128W_xdma_isnt    |     0.190 |
-|       U0                             |     0.190 |
-+--------------------------------------+-----------+
++---------------------------------------+-----------+
+| Name                                  | Power (W) |
++---------------------------------------+-----------+
+| xilinx_dma_pcie_ep                    |     1.227 |
+|   cn_top_inst                         |     0.027 |
+|     cryptonightR_ram_inst_0           |     0.027 |
+|       U0                              |     0.027 |
+|   mem_clk_inst                        |     0.052 |
+|     inst                              |     0.052 |
+|       clkin1_ibufds                   |     0.002 |
+|   xdma_0_i                            |     1.127 |
+|     inst                              |     1.127 |
+|       pcie4_ip_i                      |     1.026 |
+|       ram_top                         |     0.023 |
+|       udma_wrapper                    |     0.078 |
+|   xdma_app_i                          |     0.014 |
+|     axi4_amm_bridge_dma_inst          |     0.003 |
+|       inst                            |     0.003 |
+|     axi4_amm_slave_dma_isnt           |     0.002 |
+|     axi_clock_converter_128D32AW_inst |     0.009 |
+|       inst                            |     0.009 |
++---------------------------------------+-----------+
 
 

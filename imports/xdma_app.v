@@ -157,6 +157,20 @@ module xdma_app #(
   output wire         s_axib_rvalid,
   input  wire         s_axib_rready,
 
+  //local register read and write 
+  output wire [32-1:0]   local_reg_wdata,
+  output wire            local_reg_wren,
+  output wire [32-1:0]   local_reg_addr,
+  input  wire [32-1:0]   local_reg_rdata,
+  input                 local_reg_clk,
+
+  //local dma read and write 
+  output wire [128-1:0]   local_dma_wdata,
+  output wire            local_dma_wren,
+  output wire [32-1:0]   local_dma_addr,
+  input  wire [128-1:0]   local_dma_rdata,
+  input                 local_dma_clk,
+
   // System IO signals
   input  wire         user_resetn,
   input  wire         sys_rst_n,
@@ -171,7 +185,6 @@ module xdma_app #(
   reg  [25:0]     user_clk_heartbeat;
 
 
-  //
     wire [32-1:0]   local_mem_wdata_0;
     wire            local_mem_wren_0;
     wire [32-1:0]   local_mem_addr_0;
@@ -226,6 +239,67 @@ module xdma_app #(
     wire            avm_waitrequest_2;
     wire [32-1:0]   avm_address_2;
 
+    //clock conver for dma interface
+    wire  [C_M_AXI_ID_WIDTH-1:0]    local_dma_axi_awid;
+    wire  [64-1:0]                  local_dma_axi_awaddr;
+    wire  [7:0]                     local_dma_axi_awlen;
+    wire  [2:0]                     local_dma_axi_awsize;
+    wire  [1:0]                     local_dma_axi_awburst;
+    wire                            local_dma_axi_awvalid;
+    wire                            local_dma_axi_awready;
+    wire [C_M_AXI_DATA_WIDTH-1:0]       local_dma_axi_wdata;
+    wire [(C_M_AXI_DATA_WIDTH/8)-1:0]    local_dma_axi_wstrb;
+    wire                            local_dma_axi_wlast;
+    wire                            local_dma_axi_wvalid;
+    wire                            local_dma_axi_wready;
+    wire [C_M_AXI_ID_WIDTH-1:0]     local_dma_axi_bid;
+    wire   [1:0]                    local_dma_axi_bresp;
+    wire                            local_dma_axi_bvalid;
+    wire                            local_dma_axi_bready;
+    wire [C_M_AXI_ID_WIDTH-1:0]     local_dma_axi_arid;
+    wire  [64-1:0]                  local_dma_axi_araddr;
+    wire   [7:0]                    local_dma_axi_arlen;
+    wire   [2:0]                    local_dma_axi_arsize;
+    wire   [1:0]                    local_dma_axi_arburst;
+    wire                            local_dma_axi_arvalid;
+    wire                            local_dma_axi_arready;
+    wire   [C_M_AXI_ID_WIDTH-1:0]   local_dma_axi_rid;
+    wire   [C_M_AXI_DATA_WIDTH-1:0] local_dma_axi_rdata;
+    wire   [1:0]                    local_dma_axi_rresp;
+    wire                            local_dma_axi_rlast;
+    wire                            local_dma_axi_rvalid;
+    wire                            local_dma_axi_rready;
+  //clock conver for reg write interface  
+    wire  [31:0]                    local_reg_axil_awaddr;
+    wire                            local_reg_axil_awvalid;
+    wire                            local_reg_axil_awready;
+    wire  [31:0]                    local_reg_axil_wdata;
+    wire   [3:0]                    local_reg_axil_wstrb;
+    wire                            local_reg_axil_wvalid;
+    wire                            local_reg_axil_wready;
+    wire   [1:0]                    local_reg_axil_bresp;
+    wire                            local_reg_axil_bvalid;
+    wire                            local_reg_axil_bready;
+    wire  [31:0]                    local_reg_axil_araddr;
+    wire                            local_reg_axil_arvalid;
+    wire                            local_reg_axil_arready;
+    wire  [31:0]                    local_reg_axil_rdata;
+    wire   [1:0]                    local_reg_axil_rresp;
+    wire                            local_reg_axil_rvalid;
+    wire                            local_reg_axil_rready;
+      // output signal
+  assign local_reg_wdata = local_mem_wdata_0;
+  assign local_reg_wren = local_mem_wren_0;
+  assign local_reg_addr = local_mem_addr_0;
+  assign local_mem_rdata_0 = local_reg_rdata;
+//  assign local_reg_clk = local_mem_clk_0;
+
+  assign local_dma_wdata = local_mem_wdata_1;
+  assign local_dma_wren = local_mem_wren_1;
+  assign local_dma_addr = local_mem_addr_1;
+  assign local_mem_rdata_1 = local_dma_rdata;
+//  assign local_dma_clk = local_mem_clk_1;
+
   // The sys_rst_n input is active low based on the core configuration
   assign sys_resetn = sys_rst_n;
 
@@ -244,7 +318,7 @@ module xdma_app #(
   assign leds[2] = user_lnk_up;
   assign leds[3] = user_clk_heartbeat[25];
 
-axi4_lite_amm_bridge axi4_lite_amm_bridge_inst (
+axilite_clock_converter_32d32aw axilite_clock_converter_32d32aw_inst (
       .s_axi_aclk(user_clk),                          // input wire s_axi_aclk
       .s_axi_aresetn(user_resetn),                    // input wire s_axi_aresetn
       .s_axi_awaddr(s_axil_awaddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_awaddr
@@ -264,6 +338,48 @@ axi4_lite_amm_bridge axi4_lite_amm_bridge_inst (
       .s_axi_rresp(s_axil_rresp),                        // output wire [1 : 0] s_axi_rresp
       .s_axi_rvalid(s_axil_rvalid),                      // output wire s_axi_rvalid
       .s_axi_rready(s_axil_rready),                      // input wire s_axi_rready
+      //the master interface
+      .m_axi_aclk(local_reg_clk),                         // input wire s_axi_aclk
+      .m_axi_aresetn(local_reg_resetn),                    // input wire s_axi_aresetn
+      .m_axi_awaddr(local_reg_axil_awaddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_awaddr
+      .m_axi_awvalid(local_reg_axil_awvalid),                    // input wire s_axi_awvalid
+      .m_axi_awready(local_reg_axil_awready),                    // output wire s_axi_awready
+      .m_axi_wdata(local_reg_axil_wdata),                        // input wire [31 : 0] s_axi_wdata
+      .m_axi_wstrb(local_reg_axil_wstrb),                        // input wire [3 : 0] s_axi_wstrb
+      .m_axi_wvalid(local_reg_axil_wvalid),                      // input wire s_axi_wvalid
+      .m_axi_wready(local_reg_axil_wready),                      // output wire s_axi_wready
+      .m_axi_bresp(local_reg_axil_bresp),                        // output wire [1 : 0] s_axi_bresp
+      .m_axi_bvalid(local_reg_axil_bvalid),                      // output wire s_axi_bvalid
+      .m_axi_bready(local_reg_axil_bready),                      // input wire s_axi_bready
+      .m_axi_araddr(local_reg_axil_araddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_araddr
+      .m_axi_arvalid(local_reg_axil_arvalid),                    // input wire s_axi_arvalid
+      .m_axi_arready(local_reg_axil_arready),                    // output wire s_axi_arready
+      .m_axi_rdata(local_reg_axil_rdata),                        // output wire [31 : 0] s_axi_rdata
+      .m_axi_rresp(local_reg_axil_rresp),                        // output wire [1 : 0] s_axi_rresp
+      .m_axi_rvalid(local_reg_axil_rvalid),                      // output wire s_axi_rvalid
+      .m_axi_rready(local_reg_axil_rready)                      // input wire s_axi_rready
+);
+
+axi4_lite_amm_bridge axi4_lite_amm_bridge_inst (
+      .s_axi_aclk(local_reg_clk),                          // input wire s_axi_aclk
+      .s_axi_aresetn(local_reg_resetn),                    // input wire s_axi_aresetn
+      .s_axi_awaddr(local_reg_axil_awaddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_awaddr
+      .s_axi_awvalid(local_reg_axil_awvalid),                    // input wire s_axi_awvalid
+      .s_axi_awready(local_reg_axil_awready),                    // output wire s_axi_awready
+      .s_axi_wdata(local_reg_axil_wdata),                        // input wire [31 : 0] s_axi_wdata
+      .s_axi_wstrb(local_reg_axil_wstrb),                        // input wire [3 : 0] s_axi_wstrb
+      .s_axi_wvalid(local_reg_axil_wvalid),                      // input wire s_axi_wvalid
+      .s_axi_wready(local_reg_axil_wready),                      // output wire s_axi_wready
+      .s_axi_bresp(local_reg_axil_bresp),                        // output wire [1 : 0] s_axi_bresp
+      .s_axi_bvalid(local_reg_axil_bvalid),                      // output wire s_axi_bvalid
+      .s_axi_bready(local_reg_axil_bready),                      // input wire s_axi_bready
+      .s_axi_araddr(local_reg_axil_araddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_araddr
+      .s_axi_arvalid(local_reg_axil_arvalid),                    // input wire s_axi_arvalid
+      .s_axi_arready(local_reg_axil_arready),                    // output wire s_axi_arready
+      .s_axi_rdata(local_reg_axil_rdata),                        // output wire [31 : 0] s_axi_rdata
+      .s_axi_rresp(local_reg_axil_rresp),                        // output wire [1 : 0] s_axi_rresp
+      .s_axi_rvalid(local_reg_axil_rvalid),                      // output wire s_axi_rvalid
+      .s_axi_rready(local_reg_axil_rready),                      // input wire s_axi_rready
       .avm_write(avm_write_0),                            // output wire avm_write
       .avm_read(avm_read_0),                              // output wire avm_read
       .avm_writedata(avm_writedata_0),                    // output wire [31 : 0] avm_writedata
@@ -286,8 +402,8 @@ axi4_lite_amm_slave #(
       .C_AVM_BURST_WIDTH(1),
       .C_READ_LATENCY(1)
       ) axi4_lite_amm_slave_inst (
-        .avm_clk(user_clk),
-        .avm_resetn(user_resetn),
+        .avm_clk(local_reg_clk),
+        .avm_resetn(local_reg_resetn),
         .avm_write(avm_write_0),                            // output wire avm_write
         .avm_read(avm_read_0),                              // output wire avm_read
         .avm_byteenable(avm_byteenable_0),                  // output wire [3 : 0] avm_byteenable
@@ -309,6 +425,7 @@ axi4_lite_amm_slave #(
         .local_mem_clk(local_mem_clk_0)
 );
 
+/*
 blk_mem_1024D32W blk_mem_1024D32W_lite_isnt(
             .clka(local_mem_clk_0),
             .ena(1'b1),
@@ -317,12 +434,22 @@ blk_mem_1024D32W blk_mem_1024D32W_lite_isnt(
             .dina(local_mem_wdata_0), 
             .douta(local_mem_rdata_0)
             );
+*/
+
+
+
+
+
+
+
+
 
 //axi_local_inf axi_local_inf_bypassdma_ins
 //--------------------------------------------------------------------
-//AXI4 Lite Driver Instance
+//AXI4 Memory Driver Instance
 //--------------------------------------------------------------------
-axi4_amm_bridge axi4_amm_bridge_dma_inst (
+axi_clock_converter_128D32AW axi_clock_converter_128D32AW_inst(//clock converter
+        //slave interface
         .s_axi_aclk(user_clk),                          // input wire s_axi_aclk
         .s_axi_aresetn(user_resetn),                    // input wire s_axi_aresetn
         .s_axi_awid(s_axi_awid),                          // input wire [3 : 0] s_axi_awid
@@ -353,7 +480,75 @@ axi4_amm_bridge axi4_amm_bridge_dma_inst (
         .s_axi_rdata(s_axi_rdata),                        // output wire [31 : 0] s_axi_rdata
         .s_axi_rresp(s_axi_rresp),                        // output wire [1 : 0] s_axi_rresp
         .s_axi_rvalid(s_axi_rvalid),                      // output wire s_axi_rvalid
-        .s_axi_rready(s_axi_rready),                      // input wire s_axi_rready
+        .s_axi_rready(s_axi_rready),                      // input wire s_axi_rready 
+        
+        //master interface
+        .m_axi_aclk(local_dma_clk),                          // input wire s_axi_aclk
+        .m_axi_aresetn(local_dma_resetn),                    // input wire s_axi_aresetn
+        .m_axi_awid(local_dma_axi_awid),                          // input wire [3 : 0] s_axi_awid
+        .m_axi_awlen(local_dma_axi_awlen),                        // input wire [4 : 0] s_axi_awlen
+        .m_axi_awsize(local_dma_axi_awsize),                      // input wire [2 : 0] s_axi_awsize
+        .m_axi_awburst(local_dma_axi_awburst),                    // input wire [1 : 0] s_axi_awburst
+        .m_axi_arid(local_dma_axi_arid),                          // input wire [3 : 0] s_axi_arid
+        .m_axi_arlen(local_dma_axi_arlen),                        // input wire [4 : 0] s_axi_arlen
+        .m_axi_arsize(local_dma_axi_arsize),                      // input wire [2 : 0] s_axi_arsize
+        .m_axi_arburst(local_dma_axi_arburst),                    // input wire [1 : 0] s_axi_arburst
+        .m_axi_rid(local_dma_axi_rid),                            // output wire [3 : 0] s_axi_rid
+        .m_axi_rlast(local_dma_axi_rlast),                        // output wire s_axi_rlast
+        .m_axi_wlast(local_dma_axi_wlast),                        // input wire s_axi_wlast
+        .m_axi_bid(local_dma_axi_bid),                            // output wire [3 : 0] s_axi_bid
+        .m_axi_awaddr(local_dma_axi_awaddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_awaddr
+        .m_axi_awvalid(local_dma_axi_awvalid),                    // input wire s_axi_awvalid
+        .m_axi_awready(local_dma_axi_awready),                    // output wire s_axi_awready
+        .m_axi_wdata(local_dma_axi_wdata),                        // input wire [31 : 0] s_axi_wdata
+        .m_axi_wstrb(local_dma_axi_wstrb),                        // input wire [3 : 0] s_axi_wstrb
+        .m_axi_wvalid(local_dma_axi_wvalid),                      // input wire s_axi_wvalid
+        .m_axi_wready(local_dma_axi_wready),                      // output wire s_axi_wready
+        .m_axi_bresp(local_dma_axi_bresp),                        // output wire [1 : 0] s_axi_bresp
+        .m_axi_bvalid(local_dma_axi_bvalid),                      // output wire s_axi_bvalid
+        .m_axi_bready(local_dma_axi_bready),                      // input wire s_axi_bready
+        .m_axi_araddr(local_dma_axi_araddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_araddr
+        .m_axi_arvalid(local_dma_axi_arvalid),                    // input wire s_axi_arvalid
+        .m_axi_arready(local_dma_axi_arready),                    // output wire s_axi_arready
+        .m_axi_rdata(local_dma_axi_rdata),                        // output wire [31 : 0] s_axi_rdata
+        .m_axi_rresp(local_dma_axi_rresp),                        // output wire [1 : 0] s_axi_rresp
+        .m_axi_rvalid(local_dma_axi_rvalid),                      // output wire s_axi_rvalid
+        .m_axi_rready(local_dma_axi_rready)                       // input wire s_axi_rready
+        );
+
+
+axi4_amm_bridge axi4_amm_bridge_dma_inst (
+        .s_axi_aclk(local_dma_clk),                          // input wire s_axi_aclk
+        .s_axi_aresetn(local_dma_resetn),                    // input wire s_axi_aresetn
+        .s_axi_awid(local_dma_axi_awid),                          // input wire [3 : 0] s_axi_awid
+        .s_axi_awlen(local_dma_axi_awlen),                        // input wire [4 : 0] s_axi_awlen
+        .s_axi_awsize(local_dma_axi_awsize),                      // input wire [2 : 0] s_axi_awsize
+        .s_axi_awburst(local_dma_axi_awburst),                    // input wire [1 : 0] s_axi_awburst
+        .s_axi_arid(local_dma_axi_arid),                          // input wire [3 : 0] s_axi_arid
+        .s_axi_arlen(local_dma_axi_arlen),                        // input wire [4 : 0] s_axi_arlen
+        .s_axi_arsize(local_dma_axi_arsize),                      // input wire [2 : 0] s_axi_arsize
+        .s_axi_arburst(local_dma_axi_arburst),                    // input wire [1 : 0] s_axi_arburst
+        .s_axi_rid(local_dma_axi_rid),                            // output wire [3 : 0] s_axi_rid
+        .s_axi_rlast(local_dma_axi_rlast),                        // output wire s_axi_rlast
+        .s_axi_wlast(local_dma_axi_wlast),                        // input wire s_axi_wlast
+        .s_axi_bid(local_dma_axi_bid),                            // output wire [3 : 0] s_axi_bid
+        .s_axi_awaddr(local_dma_axi_awaddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_awaddr
+        .s_axi_awvalid(local_dma_axi_awvalid),                    // input wire s_axi_awvalid
+        .s_axi_awready(local_dma_axi_awready),                    // output wire s_axi_awready
+        .s_axi_wdata(local_dma_axi_wdata),                        // input wire [31 : 0] s_axi_wdata
+        .s_axi_wstrb(local_dma_axi_wstrb),                        // input wire [3 : 0] s_axi_wstrb
+        .s_axi_wvalid(local_dma_axi_wvalid),                      // input wire s_axi_wvalid
+        .s_axi_wready(local_dma_axi_wready),                      // output wire s_axi_wready
+        .s_axi_bresp(local_dma_axi_bresp),                        // output wire [1 : 0] s_axi_bresp
+        .s_axi_bvalid(local_dma_axi_bvalid),                      // output wire s_axi_bvalid
+        .s_axi_bready(local_dma_axi_bready),                      // input wire s_axi_bready
+        .s_axi_araddr(local_dma_axi_araddr[32 -1 : 0]),                      // input wire [31 : 0] s_axi_araddr
+        .s_axi_arvalid(local_dma_axi_arvalid),                    // input wire s_axi_arvalid
+        .s_axi_arready(local_dma_axi_arready),                    // output wire s_axi_arready
+        .s_axi_rdata(local_dma_axi_rdata),                        // output wire [31 : 0] s_axi_rdata
+        .s_axi_rresp(local_dma_axi_rresp),                        // output wire [1 : 0] s_axi_rresp
+        .s_axi_rvalid(local_dma_axi_rvalid),                      // output wire s_axi_rvalid
+        .s_axi_rready(local_dma_axi_rready),                      // input wire s_axi_rready
 
         .avm_write(avm_write_1),                            // output wire avm_write
         .avm_read(avm_read_1),                              // output wire avm_read
@@ -378,8 +573,8 @@ axi4_amm_slave #(
         .C_AVM_BURST_WIDTH(9),
         .C_READ_LATENCY(1)
         ) axi4_amm_slave_dma_isnt (
-          .avm_clk(user_clk),
-          .avm_resetn(user_resetn),
+          .avm_clk(local_dma_clk),
+          .avm_resetn(local_dma_resetn),
           .avm_write(avm_write_1),                            // output wire avm_write
           .avm_read(avm_read_1),                              // output wire avm_read
           .avm_byteenable(avm_byteenable_1),                  // output wire [3 : 0] avm_byteenable
@@ -401,7 +596,7 @@ axi4_amm_slave #(
           .local_mem_clk(local_mem_clk_1)
 );
 
-
+/*
 blk_mem_131072D128W blk_mem_131072D128W_xdma_isnt(
             .clka(local_mem_clk_1), 
             .wea(local_mem_wren_1), 
@@ -409,6 +604,7 @@ blk_mem_131072D128W blk_mem_131072D128W_xdma_isnt(
             .dina(local_mem_wdata_1), 
             .douta(local_mem_rdata_1)
             );
+*/
 /*
 axi4_amm_bridge axi4_amm_bridge_bypassdma_inst (
         .s_axi_aclk(user_clk),                          // input wire s_axi_aclk

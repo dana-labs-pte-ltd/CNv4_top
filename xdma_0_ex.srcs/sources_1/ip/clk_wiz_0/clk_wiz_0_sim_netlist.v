@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Jun  4 15:18:13 2019
-// Host        : IT-20181130VVYG running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Tue Jul  2 11:22:46 2019
+// Host        : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
-//               E:/work/fpga_vcu1525/fpga_pcie/xdma_0_ex/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+//               /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,10 +15,12 @@
 (* NotValidForBitStream *)
 module clk_wiz_0
    (clk_out1,
+    clk_out2,
     locked,
     clk_in1_p,
     clk_in1_n);
   output clk_out1;
+  output clk_out2;
   output locked;
   input clk_in1_p;
   input clk_in1_n;
@@ -26,22 +28,26 @@ module clk_wiz_0
   (* IBUF_LOW_PWR *) wire clk_in1_n;
   (* IBUF_LOW_PWR *) wire clk_in1_p;
   wire clk_out1;
+  wire clk_out2;
   wire locked;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
        (.clk_in1_n(clk_in1_n),
         .clk_in1_p(clk_in1_p),
         .clk_out1(clk_out1),
+        .clk_out2(clk_out2),
         .locked(locked));
 endmodule
 
 (* ORIG_REF_NAME = "clk_wiz_0_clk_wiz" *) 
 module clk_wiz_0_clk_wiz_0_clk_wiz
    (clk_out1,
+    clk_out2,
     locked,
     clk_in1_p,
     clk_in1_n);
   output clk_out1;
+  output clk_out2;
   output locked;
   input clk_in1_p;
   input clk_in1_n;
@@ -51,11 +57,12 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire clk_in1_p;
   wire clk_out1;
   wire clk_out1_clk_wiz_0;
+  wire clk_out2;
+  wire clk_out2_clk_wiz_0;
   wire locked;
   wire NLW_plle4_adv_inst_CLKFBIN_UNCONNECTED;
   wire NLW_plle4_adv_inst_CLKFBOUT_UNCONNECTED;
   wire NLW_plle4_adv_inst_CLKOUT0B_UNCONNECTED;
-  wire NLW_plle4_adv_inst_CLKOUT1_UNCONNECTED;
   wire NLW_plle4_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_plle4_adv_inst_CLKOUTPHY_UNCONNECTED;
   wire NLW_plle4_adv_inst_DRDY_UNCONNECTED;
@@ -81,20 +88,28 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .I(clk_out1_clk_wiz_0),
         .O(clk_out1));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  (* XILINX_LEGACY_PRIM = "BUFG" *) 
+  BUFGCE #(
+    .CE_TYPE("ASYNC")) 
+    clkout2_buf
+       (.CE(1'b1),
+        .I(clk_out2_clk_wiz_0),
+        .O(clk_out2));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   (* OPT_MODIFIED = "MLO " *) 
   PLLE4_ADV #(
-    .CLKFBOUT_MULT(8),
+    .CLKFBOUT_MULT(5),
     .CLKFBOUT_PHASE(0.000000),
     .CLKIN_PERIOD(3.333000),
-    .CLKOUT0_DIVIDE(8),
+    .CLKOUT0_DIVIDE(5),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
-    .CLKOUT1_DIVIDE(1),
+    .CLKOUT1_DIVIDE(10),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUTPHY_MODE("VCO_2X"),
     .COMPENSATION("INTERNAL"),
-    .DIVCLK_DIVIDE(3),
+    .DIVCLK_DIVIDE(2),
     .IS_CLKFBIN_INVERTED(1'b0),
     .IS_CLKIN_INVERTED(1'b0),
     .IS_PWRDWN_INVERTED(1'b0),
@@ -107,7 +122,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKIN(clk_in1_clk_wiz_0),
         .CLKOUT0(clk_out1_clk_wiz_0),
         .CLKOUT0B(NLW_plle4_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(NLW_plle4_adv_inst_CLKOUT1_UNCONNECTED),
+        .CLKOUT1(clk_out2_clk_wiz_0),
         .CLKOUT1B(NLW_plle4_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUTPHY(NLW_plle4_adv_inst_CLKOUTPHY_UNCONNECTED),
         .CLKOUTPHYEN(1'b0),
