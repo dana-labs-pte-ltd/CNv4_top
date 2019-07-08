@@ -1,3 +1,4 @@
+`timescale 1 ns / 1 ps // timescale for following modules
 module cn_top_tb ();
 
 parameter ADDRESS_WIDTH = 15;
@@ -7,27 +8,25 @@ wire      reset_n;
 
 // Buffer interface
 // input          reg_cs;
-reg  [7:0]    reg_address;
+reg  [9:0]    reg_address;
 reg           reg_write;
 reg  [31:0]   reg_wrdata;
 wire [31:0]   reg_rddata;
 
-reg  [ADDRESS_WIDTH:0]    mem_address;
+reg  [ADDRESS_WIDTH+1:0]    mem_address;
 reg           mem_write;
-reg  [511:0]  mem_wrdata;
-wire [511:0]  mem_rddata;
+reg  [127:0]  mem_wrdata;
+wire [127:0]  mem_rddata;
 wire          sts_ml_finished;
 
-reg [63:0] h0 [11:0];
-reg [63:0] al0;
-reg [63:0]	ah0;
-reg [127:0] ax0;
-reg [127:0] bx0;
-reg [127:0] bx1;
+reg [63:0] h0 [0:13];
+reg [63:0] code0 [0:69];
 
-
-parameter REF_CLK_HALF_CYCLE=5000;//ps
-parameter RESET_WIDTH=50000;
+parameter REF_CLK_HALF_CYCLE=2000;//ps
+parameter RESET_WIDTH=20000;
+parameter h0_base = 10'h100;
+parameter code0_base = 10'h000;
+parameter cntl_base = 10'h200;
 integer i;
 
   //------------------------------------------------------------------------------//
@@ -55,7 +54,7 @@ integer i;
 
 task tsk_mem_write;
   input [511:0] mem_data;
-  input [ADDRESS_WIDTH-1:0]   mem_addr;
+  input [ADDRESS_WIDTH+1:0]   mem_addr;
 begin
   mem_address = mem_addr;
   mem_wrdata = mem_data;
@@ -77,7 +76,7 @@ endtask
 
 task tsk_reg_write;
   input [31:0] reg_data;
-  input [8:0]   reg_addr;
+  input [9:0]   reg_addr;
 begin
   reg_address = reg_addr;
   reg_wrdata = reg_data;
@@ -89,6 +88,7 @@ end
 endtask
 
 task h0_init;
+reg [4:0] i;
 begin
     h0[0] = 64'h8862253561833732;
     h0[1] = 64'h3744837167518724;
@@ -102,36 +102,46 @@ begin
 	h0[9] = 64'haf267bb9648b6f8b;
 	h0[10] = 64'h4f60c4f20af60d7c;
 	h0[11] = 64'h090a233ba8929add;
-	al0 = h0[0] ^ h0[4];
-	ah0 = h0[1] ^ h0[5];
-	ax0 = {ah0,al0};
-    bx0 = {h0[3] ^ h0[7], h0[2] ^ h0[6]};
-	bx1 = {h0[9] ^ h0[11], h0[8] ^ h0[10]};
-    tsk_reg_write(al0[31:0],0);
-    tsk_reg_write(al0[63:32],1);
-    tsk_reg_write(ah0[31:0],2);
-    tsk_reg_write(ah0[63:32],3);
-    tsk_reg_write(bx0[31:0],4);
-    tsk_reg_write(bx0[63:32],5);
-    tsk_reg_write(bx0[95:64],6);
-    tsk_reg_write(bx0[127:96],7);
-    tsk_reg_write(bx1[31:0],8);
-    tsk_reg_write(bx1[63:32],9);
-    tsk_reg_write(bx1[95:64],10);
-    tsk_reg_write(bx1[127:96],11);
+	h0[12] = 64'h4f60c4f20af60d7c;
+	h0[13] = 64'h27f3842d7c78f07d;
+	i= 0;	
+	repeat(28)begin
+        if(i[0])begin
+            tsk_reg_write(h0[(i[4:1])][63:32], h0_base+i);
+        end else begin
+            tsk_reg_write(h0[(i[4:1])][31:0], h0_base+i);
+        end
+        i=i+1;
+	end
+end
+endtask
+
+task random_math_init;
+integer i;
+//reg [63:0] code0 [0:69];
+begin
+    i= 0;	
+    repeat(140)begin
+        if(i%2 == 1)begin
+            tsk_reg_write(code0[i/2][63:32],code0_base+i);
+        end else begin
+            tsk_reg_write(code0[i/2][31:0],code0_base+i);
+        end
+        i=i+1;
+    end
 end
 endtask
 
 task mem_init;
-reg [511:0] mem_data;
+reg [127:0] mem_data;
 reg [63:0] j;
 reg [63:0] k;
 begin
     j = 0;
     k = 0;
-    repeat(32768) begin
-        repeat(8) begin
-            mem_data = {j,mem_data[511:64]};
+    repeat(32768*4) begin
+        repeat(2) begin
+            mem_data = {j,mem_data[127:64]};
             j=j+1;
         end
         tsk_mem_write(mem_data,k);
@@ -147,6 +157,7 @@ initial begin
     mem_wrdata = 0;
     mem_write = 0;
     mem_address = 0;
+    $readmemh("/media/wanner/work/work/fpga_prj/cryptonight/cryptonightR-mem-hardloop/test.sim/sim_1/behav/xsim/random_code.txt",code0);
     i=0;
     @(posedge reset_n);
     delay(20);
@@ -154,6 +165,7 @@ initial begin
 	h0_init;
 //start memory init
 	mem_init;
+	random_math_init;
     delay(20);
     i=0;
     delay(20);
@@ -168,7 +180,7 @@ initial begin
 //      i = i + 1;
 //    end
     delay(20);
-    tsk_reg_write(1,12);
+    tsk_reg_write(1,cntl_base);
     @(posedge UUT.cn_ml_inst.finished);
     delay(20);
     $finish;
@@ -177,6 +189,7 @@ end
 integer ax0_file;
 integer bx0_file;
 integer bx1_file;
+
 
 initial begin 
     delay(20);

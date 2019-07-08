@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="axi4_lite_amm_bridge_synth_1" LaunchPart="xcvu9p-fsgd2104-2L-e" LaunchTime="1559717397">
-  <File Type="PA-TCL" Name="axi4_lite_amm_bridge.tcl"/>
   <File Type="RDS-DCP" Name="axi4_lite_amm_bridge.dcp"/>
+  <File Type="PA-TCL" Name="axi4_lite_amm_bridge.tcl"/>
   <File Type="REPORTS-TCL" Name="axi4_lite_amm_bridge_reports.tcl"/>
   <File Type="RDS-RDS" Name="axi4_lite_amm_bridge.vds"/>
   <File Type="RDS-UTIL" Name="axi4_lite_amm_bridge_utilization_synth.rpt"/>

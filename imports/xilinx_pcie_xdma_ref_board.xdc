@@ -75,8 +75,8 @@
 # 300 MHz clock pin constraints.
 set_property IOSTANDARD LVDS [get_ports free_run_clock_p_in]
 set_property IOSTANDARD LVDS [get_ports free_run_clock_n_in]
-set_property PACKAGE_PIN AW19 [get_ports free_run_clock_p_in]
-set_property PACKAGE_PIN AW20 [get_ports free_run_clock_n_in]
+set_property PACKAGE_PIN AW20 [get_ports free_run_clock_p_in]
+set_property PACKAGE_PIN AW19 [get_ports free_run_clock_n_in]
 #
 #############################################################################################################
 create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p]

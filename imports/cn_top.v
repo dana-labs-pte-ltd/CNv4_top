@@ -1,22 +1,22 @@
-`timescale 1 ns / 1 ns // timescale for following modules
+`timescale 1 ns / 1 ps // timescale for following modules
 
 
 module cn_top (
-   clk,
-   reset_n,
-   
-   sts_ml_finished,
-   //avalon mem slave interface
-   mem_address,
-   mem_write,
-   mem_wrdata,
-   mem_rddata,
-   
-   //avalon reg slave interface
-   reg_address,
-   reg_write,
-   reg_wrdata,
-   reg_rddata
+                clk,
+                reset_n,
+                
+                sts_ml_finished,
+                //avalon mem slave interface
+                mem_address,
+                mem_write,
+                mem_wrdata,
+                mem_rddata,
+                
+                //avalon reg slave interface
+                reg_address,
+                reg_write,
+                reg_wrdata,
+                reg_rddata
    );
 
 `include "cn.vh"
@@ -32,103 +32,136 @@ input      reset_n;
 
 // Buffer interface
 // input          reg_cs;
-input  [7:0]   reg_address;
-input          reg_write;
-input  [31:0] reg_wrdata;
-output [31:0] reg_rddata;
+input  [9:0]    reg_address;
+input           reg_write;
+input  [31:0]   reg_wrdata;
+output [31:0]   reg_rddata;
 
 input  [ADDR_WIDTH+1:0]   mem_address;
-input          mem_write;
-input  [127:0] mem_wrdata;
-output [127:0] mem_rddata;
-output         sts_ml_finished;
+input           mem_write;
+input  [127:0]  mem_wrdata;
+output [127:0]  mem_rddata;
+output          sts_ml_finished;
 
 wire mode_speedup     = 1'b0;
 
-reg   [127:0] initial_ax0;
-reg   [127:0] initial_bx0;
-reg   [127:0] initial_bx1;
+//reg   [127:0]   initial_ax0;
+//reg   [127:0]   initial_bx0;
+//reg   [127:0]   initial_bx1;
 
+reg  [63:0]     h0  [0:13];
 
-wire [127:0] ml_cipher_StateIn ;
-wire [127:0] ml_cipher_Roundkey;
-wire [127:0] ml_cipher_StateOut;
+wire [127:0]    ml_cipher_StateIn ;
+wire [127:0]    ml_cipher_Roundkey;
+wire [127:0]    ml_cipher_StateOut;
 
-wire [511:0]  ml_ram_wrdata;
-wire [511:0]  ml_ram_rddata;
+wire [511:0]    ml_ram_wrdata;
+wire [511:0]    ml_ram_rddata;
 wire [ADDR_WIDTH-1:0]    ml_ram_addr;
-wire          ml_ram_we;
-wire          ml_ram_re;
-reg           sm_ml_start;
-wire [511:0]  ram_rddata;
-wire          sts_ml_running;
+wire            ml_ram_we;
+wire            ml_ram_re;
+reg             sm_ml_start;
+wire [511:0]    ram_rddata;
+wire            sts_ml_running;
 
 reg  [127:0]  mem_rddata;
 
-  always @(posedge clk or negedge reset_n)
+reg  [63:0]   random_rdata;
+wire [6:0]    random_addr;
+
+reg [63:0]    code0 [0:69];//save the op code 
+reg [31:0]      reg_rdata;
+
+parameter version = 32'h19070416;
+
+//register output
+always @(posedge clk or negedge reset_n)
   if (!reset_n) begin
-    initial_ax0 <= 128'h0;
-    initial_bx0 <= 128'h0;
-    initial_bx1 <= 128'h0;
+    reg_rdata <= 0;
+  end else begin
+    if(reg_address == 10'h200) begin
+        reg_rdata <= version;
+    end else begin
+        reg_rdata <= 32'h12345678;
+    end
+  end
+
+//pc configuration
+always @(posedge clk or negedge reset_n)
+  if (!reset_n) begin
     sm_ml_start <= 0;
   end else begin
-    if(reg_write && reg_address == 9'h0)
-      initial_ax0[31:0] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h1)
-      initial_ax0[63:32] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h2)
-      initial_ax0[95:64] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h3)
-      initial_ax0[127:96] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h4)
-      initial_bx0[31:0] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h5)
-      initial_bx0[63:32] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h6)
-      initial_bx0[95:64] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h7)
-      initial_bx0[127:96] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h8)
-      initial_bx1[31:0] <= reg_wrdata;
-    if(reg_write && reg_address == 9'h9)
-      initial_bx1[63:32] <= reg_wrdata;
-    if(reg_write && reg_address == 9'ha)
-      initial_bx1[95:64] <= reg_wrdata;
-    if(reg_write && reg_address == 9'hb)
-      initial_bx1[127:96] <= reg_wrdata;
-    if(reg_write && reg_address == 9'hc)
+    if(reg_write && reg_address[9:8] == 2'b01 && reg_address[0] == 1'b0)
+      h0[reg_address[4:1]][31:0] <= reg_wrdata;
+    else if(reg_write && reg_address[9:8] == 2'b01 && reg_address[0] == 1'b1)
+      h0[reg_address[4:1]][63:32] <= reg_wrdata;
+    //start the crypto core
+    if(reg_write && reg_address[9:8] == 2'b10 && reg_address[3:0] == 4'h0)
       sm_ml_start <= reg_wrdata[0];
     else begin
       sm_ml_start <= 1'b0;
     end
   end
 
-//assign mem_rddata = ram_rddata;
+//code save for test
+always @(posedge clk)
+  begin
+    if(reg_write && reg_address[9:8] == 2'b00 && reg_address[0] == 1'b0)
+      code0[reg_address[7:1]][31:0] <= reg_wrdata;
+    else if(reg_write && reg_address[8:7] == 2'b00 && reg_address[0] == 1'b1)
+      code0[reg_address[7:1]][63:32] <= reg_wrdata;
+  end
+
+//read the random reg
+always @(posedge clk)
+  begin
+    random_rdata <= code0[random_addr];
+  end
+
+assign ml_ram_rddata = ram_rddata;
 //memory loop
 cn_ml #(.ADDR_WIDTH(ADDR_WIDTH)) cn_ml_inst (
-  .clk(clk),
-  .reset_n(reset_n),
-  // ctrl interface
-  .ctrl_start(sm_ml_start),
-  // sts interface
-  .sts_running(sts_ml_running),
-  .sts_finished(sts_ml_finished),
-  // Table RAM
-  .ram_rden(ml_ram_re),
-  .ram_wren(ml_ram_we),
-  .ram_wrdata(ml_ram_wrdata),
-  .ram_addr(ml_ram_addr),
-  .ram_rddata(ram_rddata),
-  // AES cipher round
-  .cipher_StateIn(ml_cipher_StateIn),
-  .cipher_Roundkey(ml_cipher_Roundkey),
-  .cipher_StateOut(ml_cipher_StateOut),
-  // input signals
-  .in_ax0(initial_ax0),
-  .in_bx0(initial_bx0),
-  .in_bx1(initial_bx1),
-  // Test modes
-  .mode_speedup(mode_speedup)
+             .clk(clk),
+             .reset_n(reset_n),
+             // ctrl interface
+             .ctrl_start(sm_ml_start),
+             // sts interface
+             .sts_running(sts_ml_running),
+             .sts_finished(sts_ml_finished),
+             // Table RAM
+             .ram_rden(ml_ram_re),
+             .ram_wren(ml_ram_we),
+             .ram_wrdata(ml_ram_wrdata),
+             .ram_addr(ml_ram_addr),
+             .ram_rddata(ml_ram_rddata),
+             // AES cipher round
+             .cipher_StateIn(ml_cipher_StateIn),
+             .cipher_Roundkey(ml_cipher_Roundkey),
+             .cipher_StateOut(ml_cipher_StateOut),
+             // input signals
+            
+             .h0_0(h0[0]),
+             .h0_1(h0[1]),
+             .h0_2(h0[2]),
+             .h0_3(h0[3]),
+             .h0_4(h0[4]),
+             .h0_5(h0[5]),
+             .h0_6(h0[6]),
+             .h0_7(h0[7]),
+             .h0_8(h0[8]),
+             .h0_9(h0[9]),
+             .h0_10(h0[10]),
+             .h0_11(h0[11]),
+             .h0_12(h0[12]),
+             .h0_13(h0[13]),
+
+             .random_addr(random_addr),
+             .random_rdata(random_rdata),    
+             //.in_ax0(initial_ax0),
+             //.in_bx0(initial_bx0),
+             //.in_bx1(initial_bx1),
+             // Test modes
+             .mode_speedup(mode_speedup)
   );
 
 // -----------------------------------------------------------------------------------

@@ -1,33 +1,49 @@
 `timescale 1 ns / 1 ns // timescale for following modules
 
 module cn_ml (
-   clk,
-   reset_n,
-   
-   //start memory hard loop
-   ctrl_start,
-   sts_running,
-   sts_finished,
+                clk,
+                reset_n,
+                
+                //start memory hard loop
+                ctrl_start,
+                sts_running,
+                sts_finished,
 
-   //Table RAM
-   ram_rden,
-   ram_wren,
-   ram_wrdata,
-   ram_addr,
-   ram_rddata,
+                //Table RAM
+                ram_rden,
+                ram_wren,
+                ram_wrdata,
+                ram_addr,
+                ram_rddata,
 
-   //AES cipher round
-   cipher_StateIn,
-   cipher_Roundkey,
-   cipher_StateOut,
+                //AES cipher round
+                cipher_StateIn,
+                cipher_Roundkey,
+                cipher_StateOut,
 
-   //Parameters from last stage
-   in_ax0,
-   in_bx0,
-   in_bx1,
-
-   //Test only speedup simulation
-   mode_speedup
+                //Parameters from last stage
+                h0_0,
+                h0_1,
+                h0_2,
+                h0_3,
+                h0_4,
+                h0_5,
+                h0_6,
+                h0_7,
+                h0_8,
+                h0_9,
+                h0_10,
+                h0_11,
+                h0_12,
+                h0_13,
+                //in_ax0,
+                //in_bx0,
+                //in_bx1,
+                
+                random_addr,
+                random_rdata,
+                //Test only speedup simulation
+                mode_speedup
    );
 
 `include "cn.vh"
@@ -56,9 +72,27 @@ output 	[127:0]     cipher_Roundkey	;
 input  	[127:0]     cipher_StateOut	;
 
 // memory map interface from last stage
-input   [127:0]     in_ax0	        ;
-input   [127:0]     in_bx0         ;
-input   [127:0]     in_bx1         ;
+//input   [127:0]     in_ax0	        ;
+//input   [127:0]     in_bx0         ;
+//input   [127:0]     in_bx1         ;
+
+input   [63:0]      h0_0;
+input   [63:0]      h0_1;
+input   [63:0]      h0_2;
+input   [63:0]      h0_3;
+input   [63:0]      h0_4;
+input   [63:0]      h0_5;
+input   [63:0]      h0_6;
+input   [63:0]      h0_7;
+input   [63:0]      h0_8;
+input   [63:0]      h0_9;
+input   [63:0]      h0_10;
+input   [63:0]      h0_11;
+input   [63:0]      h0_12;
+input   [63:0]      h0_13;
+
+input   [55:0]      random_rdata;
+output  [6:0]       random_addr;
 
 input               mode_speedup	;
 
@@ -71,6 +105,28 @@ initial $display("ELIMINATE_WAIT_STATE = %0d", ELIMINATE_WAIT_STATE);
 //  RAM size definition
 localparam integer BYTE_ADDRESS_BITS = ADDR_WIDTH + 4;
 
+wire [63:0]  h0 [0:13];
+assign h0[0]=h0_0;
+assign h0[1]=h0_1;
+assign h0[2]=h0_2;
+assign h0[3]=h0_3;
+assign h0[4]=h0_4;
+assign h0[5]=h0_5;
+assign h0[6]=h0_6;
+assign h0[7]=h0_7;
+assign h0[8]=h0_8;
+assign h0[9]=h0_9;
+assign h0[10]=h0_10;
+assign h0[11]=h0_11;
+assign h0[12]=h0_12;
+assign h0[13]=h0_13;
+
+reg   [127:0]     in_ax0            ;
+reg   [127:0]     in_bx0            ;
+reg   [127:0]     in_bx1            ;
+reg   [31:0]      in_r0 [0:3]       ;
+reg   [31:0]      r0 [0:8]          ;
+wire  [31:0]      out_r0 [0:8]      ;
 //  signals declaration
 //  input signals
 wire    [63:0]          idx0_stage1 ;
@@ -127,43 +183,37 @@ reg     					phase_0_read_ack	;
 reg     					phase_3_read_ack	;
 reg     					phase_2_write_ack	;
 reg     					phase_6_write_ack	;
-reg               phase_4_randommath_ack;
-reg               phase_5_mul_ack   ;
+wire                        phase_4_randommath_ack;
+reg                         phase_5_mul_ack   ;
 
 reg     					phase_0_read_r0	;
 reg     					phase_3_read_r0	;
-reg     					phase_2_write_r0	;
-reg     					phase_6_write_r0	;
-reg               phase_4_randommath_r0;
-reg               phase_5_mul_r0   ;
+reg                         phase_5_mul_r0   ;
 
+/*
 reg     					phase_0_read_r1	;
 reg     					phase_3_read_r1	;
 reg     					phase_2_write_r1	;
 reg     					phase_6_write_r1	;
-reg               phase_4_randommath_r1;
-reg               phase_5_mul_r1   ;
+reg                         phase_5_mul_r1   ;
 
 reg     					phase_0_read_r2	;
 reg     					phase_3_read_r2	;
 reg     					phase_2_write_r2	;
 reg     					phase_6_write_r2	;
-reg               phase_4_randommath_r2;
-reg               phase_5_mul_r2   ;
+reg                         phase_5_mul_r2   ;
 
 reg     					phase_0_read_r3	;
 reg     					phase_3_read_r3	;
 reg     					phase_2_write_r3	;
 reg     					phase_6_write_r3	;
-reg               phase_4_randommath_r3;
-reg               phase_5_mul_r3   ;
+reg                         phase_5_mul_r3   ;
 
 reg     					phase_0_read_r4	;
 reg     					phase_3_read_r4	;
 reg     					phase_2_write_r4	;
 reg     					phase_6_write_r4	;
-reg               phase_4_randommath_r4;
-reg               phase_5_mul_r4   ;
+reg                         phase_5_mul_r4   ;
 
 
 wire    [127:0] 			aes_async_v	;
@@ -175,7 +225,7 @@ reg     [ADDR_WIDTH - 1:0] 	ram_1st_wr_addr	;//1st write address
 reg     [ADDR_WIDTH - 1:0] 	ram_2nd_wr_addr	;//2nd write address
 reg     [ADDR_WIDTH - 1:0] 	ram_1st_rd_addr	;//1st read address
 reg     [ADDR_WIDTH - 1:0] 	ram_2nd_rd_addr	;//2nd read address
-
+*/
 //  on chip RAM signals
 reg     [ADDR_WIDTH - 1:0] 	ram_addr		;//address bus to the internal ram
 reg     [1:0]               ram_addr_lowbit ;
@@ -191,7 +241,7 @@ reg     [19:0] 				iteration		    ;
 reg    						    finished      ;
 reg    						    sts_finished  ;
 reg    						    sts_running	  ;
-reg    						    start         ;
+reg    						    random_start  ;
 reg                   last_loop     ;
 
 localparam  speedup_mask = (1 << (ADDR_WIDTH-CFG_SPEEDUP_IL_LOG2)) - 1;//地址mask
@@ -229,6 +279,23 @@ begin
   end
 end
 endfunction
+
+//get the input in_ax0 in_bx0 in_bx1
+  always @(posedge clk or negedge reset_n)
+  if (!reset_n) begin
+    in_ax0 <= 128'h0;
+    in_bx0 <= 128'h0;
+    in_bx1 <= 128'h0;
+  end else begin
+    in_ax0 <= {h0[1] ^ h0[5],h0[0] ^ h0[4]};
+    in_bx0 <= {h0[3] ^ h0[7],h0[2] ^ h0[6]};
+    in_bx1 <= {h0[9] ^ h0[11],h0[8] ^ h0[10]};
+    in_r0[0] <= h0[12][31:0];
+    in_r0[1] <= h0[12] >> 32;
+    in_r0[2] <= h0[13][31:0];
+    in_r0[3] <= h0[13] >> 32;
+  end
+
 
   //========================================================================================
   //Main state machine
@@ -346,7 +413,7 @@ endfunction
   if (!reset_n) begin
     phase_2_write_ack <= 1'b0;
   end else begin
-    phase_2_write_ack <= phase_2_write_r0;
+    //phase_2_write_ack <= phase_2_write_r0;
     if(cs_state != phase_2_write_stage_1 && ns_state == phase_2_write_stage_1)begin
       phase_2_write_ack <= 1'b1;
     end else begin
@@ -355,22 +422,22 @@ endfunction
   end
   
   //ack  
-  always @(posedge clk or negedge reset_n)
-  if (!reset_n) begin
-    phase_4_randommath_ack <= 1'b0;
-    phase_4_randommath_r0 <= 1'b0;
-    phase_4_randommath_r1 <= 1'b0;
-    phase_4_randommath_r2 <= 1'b0;
-  end else begin
-    phase_4_randommath_r1 <= phase_4_randommath_r0;
-    phase_4_randommath_r2 <= phase_4_randommath_r1;
-    phase_4_randommath_ack <= phase_4_randommath_r2;
-    if(cs_state != phase_4_randommath_stage_2 && ns_state == phase_4_randommath_stage_2)begin
-      phase_4_randommath_r0 <= 1'b1;
-    end else begin
-      phase_4_randommath_r0 <= 1'b0;
-    end
-  end
+//  always @(posedge clk or negedge reset_n)
+//  if (!reset_n) begin
+//    phase_4_randommath_ack <= 1'b0;
+//    phase_4_randommath_r0 <= 1'b0;
+//    phase_4_randommath_r1 <= 1'b0;
+//    phase_4_randommath_r2 <= 1'b0;
+//  end else begin
+//    phase_4_randommath_r1 <= phase_4_randommath_r0;
+//    phase_4_randommath_r2 <= phase_4_randommath_r1;
+//    phase_4_randommath_ack <= phase_4_randommath_r2;
+//    if(cs_state != phase_4_randommath_stage_2 && ns_state == phase_4_randommath_stage_2)begin
+//      phase_4_randommath_r0 <= 1'b1;
+//    end else begin
+//      phase_4_randommath_r0 <= 1'b0;
+//    end
+//  end
 
   //ack  
   always @(posedge clk or negedge reset_n)
@@ -581,8 +648,8 @@ endfunction
       bx0 <= in_bx0;
       bx1 <= in_bx1;
     end else if(phase_4_randommath_ack) begin
-      al0 <= al0 ^ (r0[2] | (r0[3] << 32));
-      ah0 <= ah0 ^ (r0[0] | (r0[1] << 32));
+      al0 <= al0 ^ (out_r0[2] | (out_r0[3] << 32));
+      ah0 <= ah0 ^ (out_r0[0] | (out_r0[1] << 32));
     end else if(phase_5_mul_ack) begin
       al0 <= al0 + hi;
       ah0 <= ah0 + lo;
@@ -607,7 +674,9 @@ endfunction
     r0[6] <= 32'h0;
     r0[7] <= 32'h0;
     r0[8] <= 32'h0;
+    random_start <= 1'b0;
   end else begin
+    random_start <= 1'b0;
     if(cs_state == phase_idle && ns_state == phase_0_read_stage_1)begin//start iteration
         r0[0] <= in_r0[0];
         r0[1] <= in_r0[1];
@@ -624,6 +693,7 @@ endfunction
         r0[6] <= bx0[31:0]; 
         r0[7] <= bx1[31:0]; 
         r0[8] <= bx1[95:64]; 
+	random_start <= 1'b1;
     end
   end
  
@@ -633,7 +703,7 @@ endfunction
   if (!reset_n) begin
     cl <= 0;
   end else begin
-    if(ns_state == phase_4_randommath_stage_2 && cs_state == phase_3_read_stage_2) begin
+    if(phase_4_randommath_ack) begin
       cl <= cx_before_aes[63:0] ^ ((r0[0] + r0[1]) | ((r0[2] + r0[3]) << 32));
     end
   end
@@ -656,6 +726,33 @@ endfunction
   assign cx_after_aes = cipher_StateOut;
 
 
+  //========================================================================================
+  //  random math
+  //========================================================================================
+    random_math random_math_inst(
+                .clk(clk),
+                .reset_n(reset_n),
+                .start(random_start),//start 
+
+                .in_r0_0(r0[0]),
+                .in_r0_1(r0[1]),
+                .in_r0_2(r0[2]),
+                .in_r0_3(r0[3]),
+                .in_r0_4(r0[4]),
+                .in_r0_5(r0[5]),
+                .in_r0_6(r0[6]),
+                .in_r0_7(r0[7]),
+                .in_r0_8(r0[8]),
+                
+                .random_ram_addr(random_addr),
+                .random_ram_rdata(random_rdata),
+ 
+                .random_ack(phase_4_randommath_ack),
+                .out_r0_0(out_r0[0]),
+                .out_r0_1(out_r0[1]),
+                .out_r0_2(out_r0[2]),
+                .out_r0_3(out_r0[3])
+                );
   //========================================================================================
   //  multiplier
   //========================================================================================

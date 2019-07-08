@@ -39,6 +39,7 @@ read_verilog -library xil_defaultlib {
   /media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v
   /media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v
   /media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v
+  /media/wanner/work/work/fpga_prj/CNv4_top/imports/random_math.v
   /media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v
 }
 read_ip -quiet /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/mult_64wx64w_unsigned/mult_64wx64w_unsigned.xci

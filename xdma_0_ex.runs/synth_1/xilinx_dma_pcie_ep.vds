@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Jul  2 11:33:13 2019
-# Process ID: 1184
+# Start of session at: Wed Jul  3 17:22:02 2019
+# Process ID: 11612
 # Current directory: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1
 # Command line: vivado -log xilinx_dma_pcie_ep.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_dma_pcie_ep.tcl
 # Log file: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/xilinx_dma_pcie_ep.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xcvu9p'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu9p'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1211 
+INFO: Helper process launched with PID 11631 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1413.992 ; gain = 16.000 ; free physical = 1367 ; free virtual = 9557
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1413.992 ; gain = 16.000 ; free physical = 1356 ; free virtual = 11645
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'xilinx_dma_pcie_ep' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_dma_pcie_ep.sv:57]
 	Parameter PL_LINK_CAP_MAX_LINK_WIDTH bound to: 2 - type: integer 
@@ -40,8 +40,8 @@ INFO: [Synth 8-6157] synthesizing module 'xilinx_dma_pcie_ep' [/media/wanner/wor
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 64 - type: integer 
 	Parameter C_M_AXI_ADDR_WIDTH bound to: 64 - type: integer 
 	Parameter C_NUM_USR_IRQ bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE4' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:20599]
 	Parameter REFCLK_EN_TX_PATH bound to: 1'b0 
 	Parameter REFCLK_HROW_CK_SEL bound to: 2'b00 
@@ -60,8 +60,8 @@ INFO: [Synth 8-6157] synthesizing module 'OBUF' [/tools/Xilinx/Vivado/2018.3/scr
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'OBUF' (4#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:28230]
-INFO: [Synth 8-6157] synthesizing module 'xdma_0' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/xdma_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'xdma_0' (5#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/xdma_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'xdma_0' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/xdma_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'xdma_0' (5#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/xdma_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'xdma_app' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v:57]
 	Parameter TCQ bound to: 1 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 4 - type: integer 
@@ -78,11 +78,11 @@ INFO: [Synth 8-6157] synthesizing module 'xdma_app' [/media/wanner/work/work/fpg
 	Parameter C_S_KEEP_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_KEEP_WIDTH bound to: 4 - type: integer 
 	Parameter C_XDMA_NUM_CHNL bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axilite_clock_converter_32d32aw' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axilite_clock_converter_32d32aw_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'axilite_clock_converter_32d32aw' (6#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axilite_clock_converter_32d32aw_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axilite_clock_converter_32d32aw' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axilite_clock_converter_32d32aw_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axilite_clock_converter_32d32aw' (6#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axilite_clock_converter_32d32aw_stub.v:6]
 WARNING: [Synth 8-350] instance 'axilite_clock_converter_32d32aw_inst' of module 'axilite_clock_converter_32d32aw' requires 42 connections, but only 38 given [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v:321]
-INFO: [Synth 8-6157] synthesizing module 'axi4_lite_amm_bridge' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi4_lite_amm_bridge_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_amm_bridge' (7#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi4_lite_amm_bridge_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axi4_lite_amm_bridge' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi4_lite_amm_bridge_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_amm_bridge' (7#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi4_lite_amm_bridge_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'axi4_lite_amm_slave' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_lite_amm_slave.v:66]
 	Parameter C_HAS_FIXED_WAIT bound to: 0 - type: integer 
 	Parameter C_HAS_RESPONSE bound to: 0 - type: integer 
@@ -109,11 +109,11 @@ INFO: [Synth 8-4471] merging register 'avm_write_i1_reg' into 'local_mem_wren_re
 WARNING: [Synth 8-6014] Unused sequential element avm_write_i1_reg was removed.  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_lite_amm_slave.v:201]
 INFO: [Synth 8-6155] done synthesizing module 'axi4_lite_amm_slave' (8#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_lite_amm_slave.v:66]
 WARNING: [Synth 8-689] width (9) of port connection 'avm_burstcount' does not match port width (1) of module 'axi4_lite_amm_slave' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v:413]
-INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_128D32AW' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi_clock_converter_128D32AW_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_128D32AW' (9#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi_clock_converter_128D32AW_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axi_clock_converter_128D32AW' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi_clock_converter_128D32AW_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi_clock_converter_128D32AW' (9#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi_clock_converter_128D32AW_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_clock_converter_128D32AW_inst' of module 'axi_clock_converter_128D32AW' requires 82 connections, but only 62 given [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v:451]
-INFO: [Synth 8-6157] synthesizing module 'axi4_amm_bridge' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi4_amm_bridge_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_amm_bridge' (10#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/axi4_amm_bridge_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axi4_amm_bridge' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi4_amm_bridge_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_amm_bridge' (10#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/axi4_amm_bridge_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi4_amm_bridge_dma_inst' of module 'axi4_amm_bridge' requires 40 connections, but only 39 given [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xdma_app.v:520]
 INFO: [Synth 8-6157] synthesizing module 'axi4_amm_slave' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/axi4_amm_slave.v:66]
 	Parameter C_HAS_FIXED_WAIT bound to: 0 - type: integer 
@@ -207,11 +207,29 @@ INFO: [Synth 8-6157] synthesizing module 'cn_ml' [/media/wanner/work/work/fpga_p
 	Parameter speedup_mask bound to: 0 - type: integer 
 	Parameter last_iteration_full bound to: 524287 - type: integer 
 	Parameter last_iteration_speedup bound to: 15 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:247]
-INFO: [Synth 8-6157] synthesizing module 'mult_64wx64w_unsigned' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/mult_64wx64w_unsigned_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mult_64wx64w_unsigned' (13#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/mult_64wx64w_unsigned_stub.v:6]
-WARNING: [Synth 8-3848] Net ram_rden in module/entity cn_ml does not have driver. [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:47]
-INFO: [Synth 8-6155] done synthesizing module 'cn_ml' (14#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:301]
+INFO: [Synth 8-6157] synthesizing module 'random_math' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/random_math.v:1]
+	Parameter s_idle bound to: 3'b001 
+	Parameter s_run bound to: 3'b010 
+	Parameter s_ret bound to: 3'b100 
+	Parameter MUL bound to: 0 - type: integer 
+	Parameter ADD bound to: 1 - type: integer 
+	Parameter SUB bound to: 2 - type: integer 
+	Parameter ROR bound to: 3 - type: integer 
+	Parameter ROL bound to: 4 - type: integer 
+	Parameter XOR bound to: 5 - type: integer 
+	Parameter RET bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/media/wanner/work/work/fpga_prj/CNv4_top/imports/random_math.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'random_math' (13#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/random_math.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mult_64wx64w_unsigned' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/mult_64wx64w_unsigned_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mult_64wx64w_unsigned' (14#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/mult_64wx64w_unsigned_stub.v:6]
+WARNING: [Synth 8-5788] Register in_r0_reg[0] in module cn_ml is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:280]
+WARNING: [Synth 8-5788] Register in_r0_reg[1] in module cn_ml is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:280]
+WARNING: [Synth 8-5788] Register in_r0_reg[2] in module cn_ml is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:280]
+WARNING: [Synth 8-5788] Register in_r0_reg[3] in module cn_ml is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:280]
+WARNING: [Synth 8-3848] Net ram_rden in module/entity cn_ml does not have driver. [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'cn_ml' (15#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_ml.v:3]
+WARNING: [Synth 8-689] width (64) of port connection 'random_rdata' does not match port width (56) of module 'cn_ml' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:144]
 INFO: [Synth 8-6157] synthesizing module 'cipherRound_mod' [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:3]
 	Parameter UNROLL bound to: 1 - type: integer 
 	Parameter RKW bound to: 128 - type: integer 
@@ -232,118 +250,132 @@ INFO: [Synth 8-226] default block is never used [/media/wanner/work/work/fpga_pr
 INFO: [Synth 8-226] default block is never used [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:19]
 INFO: [Synth 8-226] default block is never used [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:19]
 INFO: [Synth 8-226] default block is never used [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'cipherRound_mod' (15#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:3]
-WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:157]
-WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:157]
-WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:157]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_32768D128W' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/blk_mem_32768D128W_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_32768D128W' (16#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-1184-ubuntu/realtime/blk_mem_32768D128W_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cipherRound_mod' (16#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cipherRound.v:3]
+WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:175]
+WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:175]
+WARNING: [Synth 8-151] case item 2'b00 is unreachable [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:175]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_32768D128W' [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/blk_mem_32768D128W_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_32768D128W' (17#1) [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/.Xil/Vivado-11612-ubuntu/realtime/blk_mem_32768D128W_stub.v:6]
+WARNING: [Synth 8-5788] Register h0_reg[0] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[1] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[2] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[3] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[4] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[5] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[6] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[7] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[8] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[9] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[10] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[11] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[12] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
+WARNING: [Synth 8-5788] Register h0_reg[13] in module cn_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:80]
 WARNING: [Synth 8-3848] Net reg_rddata in module/entity cn_top does not have driver. [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:38]
-INFO: [Synth 8-6155] done synthesizing module 'cn_top' (17#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'xilinx_dma_pcie_ep' (18#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_dma_pcie_ep.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'cn_top' (18#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/cn_top.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_dma_pcie_ep' (19#1) [/media/wanner/work/work/fpga_prj/CNv4_top/imports/xilinx_dma_pcie_ep.sv:57]
 WARNING: [Synth 8-3331] design cipherRound_mod has unconnected port last_cipher_iteration
-WARNING: [Synth 8-3331] design cn_ml has unconnected port ram_rden
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[31]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[30]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[29]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[28]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[27]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[26]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[25]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[24]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[23]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[22]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[21]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[20]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[19]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[18]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[17]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[16]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[15]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[14]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[13]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[12]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[11]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[10]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[9]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[8]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[7]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[6]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[5]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[4]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[3]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[2]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[1]
-WARNING: [Synth 8-3331] design cn_top has unconnected port reg_rddata[0]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[15]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[14]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[13]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[12]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[11]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[10]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[9]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[8]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[7]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[6]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[5]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[4]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[3]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[2]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[1]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_byteenable[0]
-WARNING: [Synth 8-3331] design axi4_amm_slave has unconnected port avm_beginbursttransfer
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_byteenable[3]
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_byteenable[2]
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_byteenable[1]
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_byteenable[0]
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_beginbursttransfer
-WARNING: [Synth 8-3331] design axi4_lite_amm_slave has unconnected port avm_burstcount[0]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_awready
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_wready
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bid[3]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bid[2]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bid[1]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bid[0]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bresp[1]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bresp[0]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_bvalid
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_arready
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rid[3]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rid[2]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rid[1]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rid[0]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[127]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[126]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[125]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[124]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[123]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[122]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[121]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[120]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[119]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[118]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[117]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[116]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[115]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[114]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[113]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[112]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[111]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[110]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[109]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[108]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[107]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[106]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[105]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[104]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[103]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[102]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[101]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[100]
-WARNING: [Synth 8-3331] design xdma_app has unconnected port s_axib_rdata[99]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[31]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[30]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[29]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[28]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[27]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[26]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[25]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[24]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[23]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[22]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[21]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[20]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[19]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[18]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[17]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[16]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[15]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[14]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[13]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[12]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[11]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[10]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[9]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[8]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[7]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[6]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[5]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[4]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[3]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[2]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_0[1]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[31]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[30]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[29]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[28]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[27]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[26]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[25]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[24]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[23]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[22]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[21]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[20]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[19]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[18]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[17]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[16]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[15]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[14]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[13]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[12]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[11]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[10]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[9]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[8]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[7]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[6]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[5]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[4]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[3]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[2]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_1[1]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[31]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[30]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[29]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[28]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[27]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[26]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[25]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[24]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[23]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[22]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[21]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[20]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[19]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[18]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[17]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[16]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[15]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[14]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[13]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[12]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[11]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[10]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[9]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[8]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[7]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[6]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[5]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[4]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[3]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[2]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_2[1]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[31]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[30]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[29]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[28]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[27]
+WARNING: [Synth 8-3331] design random_math has unconnected port in_r0_3[26]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1473.742 ; gain = 75.750 ; free physical = 1354 ; free virtual = 9553
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1479.742 ; gain = 81.750 ; free physical = 1339 ; free virtual = 11636
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -358,10 +390,10 @@ WARNING: [Synth 8-3295] tying undriven pin axi4_amm_slave_dma_isnt:avm_resetn to
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1473.742 ; gain = 75.750 ; free physical = 1357 ; free virtual = 9560
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1479.742 ; gain = 81.750 ; free physical = 1339 ; free virtual = 11641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1473.742 ; gain = 75.750 ; free physical = 1357 ; free virtual = 9560
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1479.742 ; gain = 81.750 ; free physical = 1339 ; free virtual = 11641
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -400,16 +432,16 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/xilinx_dma_pcie_ep_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2516.898 ; gain = 0.000 ; free physical = 379 ; free virtual = 8631
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.898 ; gain = 0.000 ; free physical = 343 ; free virtual = 10685
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2516.898 ; gain = 0.000 ; free physical = 379 ; free virtual = 8631
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.898 ; gain = 0.000 ; free physical = 343 ; free virtual = 10685
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2516.898 ; gain = 0.000 ; free physical = 379 ; free virtual = 8631
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2516.898 ; gain = 0.000 ; free physical = 379 ; free virtual = 8630
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.898 ; gain = 0.000 ; free physical = 343 ; free virtual = 10685
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.898 ; gain = 0.000 ; free physical = 343 ; free virtual = 10684
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'cn_top_inst/cryptonightR_ram_inst_0' at clock pin 'clka' is different from the actual clock period '13.332', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'cn_top_inst/cryptonightR_ram_inst_1' at clock pin 'clka' is different from the actual clock period '13.332', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'cn_top_inst/cryptonightR_ram_inst_2' at clock pin 'clka' is different from the actual clock period '13.332', this can lead to different synthesis results.
@@ -418,7 +450,7 @@ WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context 
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'xdma_app_i/axi_clock_converter_128D32AW_inst' at clock pin 'm_axi_aclk' is different from the actual clock period '13.332', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'xdma_app_i/axilite_clock_converter_32d32aw_inst' at clock pin 'm_axi_aclk' is different from the actual clock period '13.332', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2516.898 ; gain = 1118.906 ; free physical = 483 ; free virtual = 8741
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2526.898 ; gain = 1128.906 ; free physical = 456 ; free virtual = 10804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -426,7 +458,7 @@ Start Loading Part and Timing Information
 Loading part: xcvu9p-fsgd2104-2L-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2516.898 ; gain = 1118.906 ; free physical = 483 ; free virtual = 8741
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2526.898 ; gain = 1128.906 ; free physical = 456 ; free virtual = 10804
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -463,16 +495,41 @@ Applied set_property DONT_TOUCH = true for cn_top_inst/cryptonightR_ram_inst_3. 
 Applied set_property DONT_TOUCH = true for xdma_app_i/axi_clock_converter_128D32AW_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xdma_app_i/axilite_clock_converter_32d32aw_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2516.898 ; gain = 1118.906 ; free physical = 482 ; free virtual = 8741
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2526.898 ; gain = 1128.906 ; free physical = 456 ; free virtual = 10804
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "avm_resp" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'cs_state_reg' in module 'random_math'
+INFO: [Synth 8-5544] ROM "random_ack" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'cs_state_reg' in module 'cn_ml'
 INFO: [Synth 8-5546] ROM "ram_addr" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "iteration" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cx" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "ns_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[10]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[11]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[12]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[13]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                  s_idle |                              001 |                              001
+                   s_run |                              010 |                              010
+                   s_ret |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'cs_state_reg' in module 'random_math'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -488,7 +545,7 @@ phase_4_randommath_stage_2 |                         00100000 |                 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'cs_state_reg' in module 'cn_ml'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 2516.898 ; gain = 1118.906 ; free physical = 467 ; free virtual = 8732
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 2526.898 ; gain = 1128.906 ; free physical = 437 ; free virtual = 10793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -501,40 +558,55 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     64 Bit       Adders := 11    
+	   2 Input     64 Bit       Adders := 8     
+	   2 Input     33 Bit       Adders := 2     
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      1 Bit       Adders := 2     
 +---XORs : 
 	   3 Input    128 Bit         XORs := 1     
 	   2 Input    128 Bit         XORs := 5     
-	   2 Input     64 Bit         XORs := 2     
+	   2 Input     64 Bit         XORs := 11    
 	   2 Input      8 Bit         XORs := 32    
 	   4 Input      8 Bit         XORs := 16    
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	              512 Bit    Registers := 1     
 	              128 Bit    Registers := 14    
-	               64 Bit    Registers := 3     
-	               32 Bit    Registers := 7     
+	               64 Bit    Registers := 17    
+	               56 Bit    Registers := 1     
+	               32 Bit    Registers := 21    
 	               15 Bit    Registers := 1     
 	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 37    
+	                1 Bit    Registers := 35    
++---RAMs : 
+	               3K Bit         RAMs := 1     
 +---Muxes : 
 	   4 Input    512 Bit        Muxes := 2     
 	   2 Input    512 Bit        Muxes := 1     
 	   2 Input    128 Bit        Muxes := 8     
 	   4 Input    128 Bit        Muxes := 4     
-	   2 Input     64 Bit        Muxes := 6     
-	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 34    
+	   3 Input     56 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 37    
 	   4 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
 	   2 Input     19 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 3     
 	   2 Input      9 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 44    
 	   9 Input      8 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   4 Input      3 Bit        Muxes := 4     
 	   2 Input      2 Bit        Muxes := 9     
 	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 26    
+	   2 Input      1 Bit        Muxes := 28    
+	   3 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -571,27 +643,50 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 4     
+Module random_math 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   7 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   4 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 Module cn_ml 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     64 Bit       Adders := 11    
+	   2 Input     64 Bit       Adders := 8     
+	   2 Input     33 Bit       Adders := 2     
 +---XORs : 
 	   3 Input    128 Bit         XORs := 1     
 	   2 Input    128 Bit         XORs := 4     
-	   2 Input     64 Bit         XORs := 2     
+	   2 Input     64 Bit         XORs := 11    
 +---Registers : 
 	              512 Bit    Registers := 1     
-	              128 Bit    Registers := 8     
+	              128 Bit    Registers := 11    
 	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 13    
 	               15 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 14    
 +---Muxes : 
 	   4 Input    512 Bit        Muxes := 2     
 	   2 Input    512 Bit        Muxes := 1     
 	   4 Input    128 Bit        Muxes := 4     
 	   2 Input    128 Bit        Muxes := 3     
 	   2 Input     64 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 4     
 	   2 Input     19 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 28    
@@ -610,10 +705,16 @@ Detailed RTL Component Info :
 Module cn_top 
 Detailed RTL Component Info : 
 +---Registers : 
-	              128 Bit    Registers := 3     
+	               64 Bit    Registers := 14    
+	               56 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
++---RAMs : 
+	               3K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input    128 Bit        Muxes := 4     
+	   2 Input     64 Bit        Muxes := 28    
+	   3 Input     56 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 28    
 	   2 Input     15 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
@@ -632,123 +733,143 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "h0_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[9]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[10]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[11]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[12]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "h0_reg[13]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][0]' (FDE) to 'cn_top_inst/h0_reg[12][0]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][1]' (FDE) to 'cn_top_inst/h0_reg[12][1]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][2]' (FDE) to 'cn_top_inst/h0_reg[12][2]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][3]' (FDE) to 'cn_top_inst/h0_reg[12][3]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][4]' (FDE) to 'cn_top_inst/h0_reg[12][4]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][5]' (FDE) to 'cn_top_inst/h0_reg[12][5]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][21]' (FDE) to 'cn_top_inst/h0_reg[12][21]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][22]' (FDE) to 'cn_top_inst/h0_reg[12][22]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][23]' (FDE) to 'cn_top_inst/h0_reg[12][23]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][24]' (FDE) to 'cn_top_inst/h0_reg[12][24]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][25]' (FDE) to 'cn_top_inst/h0_reg[12][25]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][26]' (FDE) to 'cn_top_inst/h0_reg[12][26]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][27]' (FDE) to 'cn_top_inst/h0_reg[12][27]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][28]' (FDE) to 'cn_top_inst/h0_reg[12][28]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][29]' (FDE) to 'cn_top_inst/h0_reg[12][29]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][30]' (FDE) to 'cn_top_inst/h0_reg[12][30]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][31]' (FDE) to 'cn_top_inst/h0_reg[12][31]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][32]' (FDE) to 'cn_top_inst/h0_reg[12][0]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][33]' (FDE) to 'cn_top_inst/h0_reg[12][1]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][34]' (FDE) to 'cn_top_inst/h0_reg[12][2]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][35]' (FDE) to 'cn_top_inst/h0_reg[12][3]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][36]' (FDE) to 'cn_top_inst/h0_reg[12][4]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][37]' (FDE) to 'cn_top_inst/h0_reg[12][5]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][38]' (FDE) to 'cn_top_inst/h0_reg[12][6]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][39]' (FDE) to 'cn_top_inst/h0_reg[12][7]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][40]' (FDE) to 'cn_top_inst/h0_reg[12][8]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][41]' (FDE) to 'cn_top_inst/h0_reg[12][9]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][42]' (FDE) to 'cn_top_inst/h0_reg[12][10]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][43]' (FDE) to 'cn_top_inst/h0_reg[12][11]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][44]' (FDE) to 'cn_top_inst/h0_reg[12][12]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][45]' (FDE) to 'cn_top_inst/h0_reg[12][13]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][46]' (FDE) to 'cn_top_inst/h0_reg[12][14]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][47]' (FDE) to 'cn_top_inst/h0_reg[12][15]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][48]' (FDE) to 'cn_top_inst/h0_reg[12][16]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][49]' (FDE) to 'cn_top_inst/h0_reg[12][17]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][50]' (FDE) to 'cn_top_inst/h0_reg[12][18]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][51]' (FDE) to 'cn_top_inst/h0_reg[12][19]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][52]' (FDE) to 'cn_top_inst/h0_reg[12][20]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][53]' (FDE) to 'cn_top_inst/h0_reg[12][21]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][54]' (FDE) to 'cn_top_inst/h0_reg[12][22]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][55]' (FDE) to 'cn_top_inst/h0_reg[12][23]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][56]' (FDE) to 'cn_top_inst/h0_reg[12][24]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][57]' (FDE) to 'cn_top_inst/h0_reg[12][25]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][58]' (FDE) to 'cn_top_inst/h0_reg[12][26]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][59]' (FDE) to 'cn_top_inst/h0_reg[12][27]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][60]' (FDE) to 'cn_top_inst/h0_reg[12][28]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][61]' (FDE) to 'cn_top_inst/h0_reg[12][29]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][62]' (FDE) to 'cn_top_inst/h0_reg[12][30]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][63]' (FDE) to 'cn_top_inst/h0_reg[12][31]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][21]' (FDE) to 'cn_top_inst/h0_reg[12][53]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][22]' (FDE) to 'cn_top_inst/h0_reg[12][54]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][23]' (FDE) to 'cn_top_inst/h0_reg[12][55]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][24]' (FDE) to 'cn_top_inst/h0_reg[12][56]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][25]' (FDE) to 'cn_top_inst/h0_reg[12][57]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][26]' (FDE) to 'cn_top_inst/h0_reg[12][58]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][27]' (FDE) to 'cn_top_inst/h0_reg[12][59]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][28]' (FDE) to 'cn_top_inst/h0_reg[12][60]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][29]' (FDE) to 'cn_top_inst/h0_reg[12][61]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][30]' (FDE) to 'cn_top_inst/h0_reg[12][62]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][31]' (FDE) to 'cn_top_inst/h0_reg[12][63]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][53]' (FDE) to 'cn_top_inst/h0_reg[10][21]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][54]' (FDE) to 'cn_top_inst/h0_reg[10][22]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][55]' (FDE) to 'cn_top_inst/h0_reg[10][23]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][56]' (FDE) to 'cn_top_inst/h0_reg[10][24]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][57]' (FDE) to 'cn_top_inst/h0_reg[10][25]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][58]' (FDE) to 'cn_top_inst/h0_reg[10][26]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][59]' (FDE) to 'cn_top_inst/h0_reg[10][27]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][60]' (FDE) to 'cn_top_inst/h0_reg[10][28]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][61]' (FDE) to 'cn_top_inst/h0_reg[10][29]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][62]' (FDE) to 'cn_top_inst/h0_reg[10][30]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][63]' (FDE) to 'cn_top_inst/h0_reg[10][31]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][6]' (FDE) to 'cn_top_inst/h0_reg[12][6]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][7]' (FDE) to 'cn_top_inst/h0_reg[12][7]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][8]' (FDE) to 'cn_top_inst/h0_reg[12][8]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][9]' (FDE) to 'cn_top_inst/h0_reg[12][9]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][10]' (FDE) to 'cn_top_inst/h0_reg[12][10]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][11]' (FDE) to 'cn_top_inst/h0_reg[12][11]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][12]' (FDE) to 'cn_top_inst/h0_reg[12][12]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][13]' (FDE) to 'cn_top_inst/h0_reg[12][13]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][14]' (FDE) to 'cn_top_inst/h0_reg[12][14]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][15]' (FDE) to 'cn_top_inst/h0_reg[12][15]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][16]' (FDE) to 'cn_top_inst/h0_reg[12][16]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][17]' (FDE) to 'cn_top_inst/h0_reg[12][17]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][18]' (FDE) to 'cn_top_inst/h0_reg[12][18]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][19]' (FDE) to 'cn_top_inst/h0_reg[12][19]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[13][20]' (FDE) to 'cn_top_inst/h0_reg[12][20]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][0]' (FDE) to 'cn_top_inst/h0_reg[12][32]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][32]' (FDE) to 'cn_top_inst/h0_reg[10][0]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][1]' (FDE) to 'cn_top_inst/h0_reg[12][33]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][33]' (FDE) to 'cn_top_inst/h0_reg[10][1]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][2]' (FDE) to 'cn_top_inst/h0_reg[12][34]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][34]' (FDE) to 'cn_top_inst/h0_reg[10][2]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][3]' (FDE) to 'cn_top_inst/h0_reg[12][35]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][35]' (FDE) to 'cn_top_inst/h0_reg[10][3]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][4]' (FDE) to 'cn_top_inst/h0_reg[12][36]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][36]' (FDE) to 'cn_top_inst/h0_reg[10][4]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][5]' (FDE) to 'cn_top_inst/h0_reg[12][37]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][37]' (FDE) to 'cn_top_inst/h0_reg[10][5]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][6]' (FDE) to 'cn_top_inst/h0_reg[12][38]'
+INFO: [Synth 8-3886] merging instance 'cn_top_inst/h0_reg[12][38]' (FDE) to 'cn_top_inst/h0_reg[10][6]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[1][63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[5] )
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[1]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[2]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[3]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[4]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[5]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[21]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[22]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[23]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[24]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[25]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[26]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[27]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[28]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[29]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[30]' (FDCE) to 'cn_top_inst/initial_bx1_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[33]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[34]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[35]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[36]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[37]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[53]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[54]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[55]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[56]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[57]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[58]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[59]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[60]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[61]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[62]' (FDCE) to 'cn_top_inst/initial_bx1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[1]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[2]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[3]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[4]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[5]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[21]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[22]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[23]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[24]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[25]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[26]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[27]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[28]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[29]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[30]' (FDCE) to 'cn_top_inst/initial_bx0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[33]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[34]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[35]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[36]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[37]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[53]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[54]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[55]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[56]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[57]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[58]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[59]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[60]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[61]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx0_reg[62]' (FDCE) to 'cn_top_inst/initial_bx0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[1]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[2]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[3]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[21]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[22]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[23]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[24]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[25]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[26]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[27]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[28]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[29]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[30]' (FDCE) to 'cn_top_inst/initial_ax0_reg[31]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[31]' (FDCE) to 'cn_top_inst/initial_ax0_reg[5]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[33]' (FDCE) to 'cn_top_inst/initial_ax0_reg[34]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[34]' (FDCE) to 'cn_top_inst/initial_ax0_reg[35]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[35]' (FDCE) to 'cn_top_inst/initial_ax0_reg[36]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[36]' (FDCE) to 'cn_top_inst/initial_ax0_reg[37]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[37]' (FDCE) to 'cn_top_inst/initial_ax0_reg[53]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[53]' (FDCE) to 'cn_top_inst/initial_ax0_reg[54]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[54]' (FDCE) to 'cn_top_inst/initial_ax0_reg[55]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[55]' (FDCE) to 'cn_top_inst/initial_ax0_reg[56]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[56]' (FDCE) to 'cn_top_inst/initial_ax0_reg[57]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[57]' (FDCE) to 'cn_top_inst/initial_ax0_reg[58]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[58]' (FDCE) to 'cn_top_inst/initial_ax0_reg[59]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[59]' (FDCE) to 'cn_top_inst/initial_ax0_reg[60]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[60]' (FDCE) to 'cn_top_inst/initial_ax0_reg[61]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[61]' (FDCE) to 'cn_top_inst/initial_ax0_reg[62]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_ax0_reg[62]' (FDCE) to 'cn_top_inst/initial_ax0_reg[63]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[65]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[66]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[67]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[68]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[69]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[85]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[86]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[87]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[88]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[89]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'cn_top_inst/initial_bx1_reg[90]' (FDCE) to 'cn_top_inst/initial_bx1_reg[95]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[8] )
@@ -764,78 +885,72 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[18] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[19] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wren_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/\h0_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wren_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_wdata_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/local_mem_addr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/sm_ml_start_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/avm_read_i1_reg )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/avm_waitrequest_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/avm_readdatavalid_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\xdma_app_i/axi4_lite_amm_slave_inst/avm_readdata_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /phase_4_randommath_r0_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[32] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[33] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[34] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[35] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[36] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[37] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[38] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[39] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[40] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[41] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[42] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[43] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[44] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[45] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[46] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[47] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[48] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[49] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[50] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[51] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[52] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[53] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[54] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cn_top_inst/cn_ml_inst /\cx_reg[55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\r0_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\r0_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\r0_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\r0_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cn_top_inst/cn_ml_inst/\in_r0_reg[2][17] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 2516.898 ; gain = 1118.906 ; free physical = 433 ; free virtual = 8717
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 2526.898 ; gain = 1128.906 ; free physical = 402 ; free virtual = 10777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -896,13 +1011,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'mem_clk_inst/clk_out1' to
 INFO: [Synth 8-5578] Moved timing constraint from pin 'mem_clk_inst/clk_out2' to pin 'mem_clk_inst/bbstub_clk_out2/O'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:01:03 . Memory (MB): peak = 2746.422 ; gain = 1348.430 ; free physical = 149 ; free virtual = 8280
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2749.422 ; gain = 1351.430 ; free physical = 181 ; free virtual = 10341
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:03 . Memory (MB): peak = 2769.453 ; gain = 1371.461 ; free physical = 173 ; free virtual = 8276
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:04 . Memory (MB): peak = 2772.453 ; gain = 1374.461 ; free physical = 176 ; free virtual = 10335
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -914,7 +1029,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:01:03 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 174 ; free virtual = 10334
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -986,7 +1101,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \xdma_app_i/axi_clock_converter
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \xdma_app_i/axi_clock_converter_128D32AW_inst  has unconnected pin s_axi_arqos[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \xdma_app_i/axi_clock_converter_128D32AW_inst  has unconnected pin s_axi_arqos[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 174 ; free virtual = 10334
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -999,7 +1114,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 174 ; free virtual = 10334
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1011,25 +1126,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 174 ; free virtual = 10334
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 174 ; free virtual = 10334
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 175 ; free virtual = 10335
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 175 ; free virtual = 10335
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1083,34 +1198,34 @@ Report Instance Areas:
 |      |Instance                    |Module         |Cells |
 +------+----------------------------+---------------+------+
 |1     |top                         |               |  3165|
-|2     |  cn_top_inst               |cn_top         |   641|
+|2     |  cn_top_inst               |cn_top         |   640|
 |3     |    cn_ml_inst              |cn_ml          |   128|
-|4     |  xdma_app_i                |xdma_app       |  1704|
+|4     |  xdma_app_i                |xdma_app       |  1705|
 |5     |    axi4_amm_slave_dma_isnt |axi4_amm_slave |   698|
 +------+----------------------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.461 ; gain = 1379.469 ; free physical = 171 ; free virtual = 8273
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.461 ; gain = 1382.469 ; free physical = 175 ; free virtual = 10335
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 38 critical warnings and 61 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:43 . Memory (MB): peak = 2777.461 ; gain = 336.312 ; free physical = 198 ; free virtual = 8301
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2777.469 ; gain = 1379.469 ; free physical = 198 ; free virtual = 8301
+Synthesis finished with 0 errors, 38 critical warnings and 374 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:44 . Memory (MB): peak = 2780.461 ; gain = 335.312 ; free physical = 201 ; free virtual = 10361
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2780.469 ; gain = 1382.469 ; free physical = 211 ; free virtual = 10371
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2864.789 ; gain = 0.000 ; free physical = 166 ; free virtual = 8214
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2867.789 ; gain = 0.000 ; free physical = 171 ; free virtual = 10305
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-300 Infos, 153 Warnings, 38 Critical Warnings and 0 Errors encountered.
+334 Infos, 172 Warnings, 38 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:01:05 . Memory (MB): peak = 2864.789 ; gain = 1474.801 ; free physical = 224 ; free virtual = 8272
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2864.789 ; gain = 0.000 ; free physical = 224 ; free virtual = 8272
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:01:07 . Memory (MB): peak = 2867.789 ; gain = 1477.801 ; free physical = 229 ; free virtual = 10363
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2867.789 ; gain = 0.000 ; free physical = 229 ; free virtual = 10363
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/synth_1/xilinx_dma_pcie_ep.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file xilinx_dma_pcie_ep_utilization_synth.rpt -pb xilinx_dma_pcie_ep_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  2 11:34:27 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul  3 17:23:18 2019...
