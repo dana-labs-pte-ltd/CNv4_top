@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Tue Jul  2 11:22:46 2019
+// Date        : Tue Jul 16 11:04:14 2019
 // Host        : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
+//               /media/wanner/work/work/fpga_prj/CNv4_top_v1/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
 // Design      : clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xcvu9p-fsgd2104-2L-e

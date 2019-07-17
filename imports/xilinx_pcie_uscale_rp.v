@@ -66,7 +66,7 @@ module xilinx_pcie4_uscale_rp # (
   parameter        EXT_PIPE_SIM                   = "FALSE",  // This Parameter has effect on selecting Enable External PIPE Interface in GUI.
 
   parameter        PL_LINK_CAP_MAX_LINK_SPEED     = 4,   // 1- GEN1, 2 - GEN2, 4 - GEN3, 8 - GEN4
-  parameter  [4:0] PL_LINK_CAP_MAX_LINK_WIDTH     = 16,   // 1- X1, 2 - X2, 4 - X4, 8 - X8, 16 - X16
+  parameter  [4:0] PL_LINK_CAP_MAX_LINK_WIDTH     = 16,  // 1- X1, 2 - X2, 4 - X4, 8 - X8, 16 - X16
 
   parameter  [2:0] PF0_DEV_CAP_MAX_PAYLOAD_SIZE   = 3'h0,
   parameter        PL_DISABLE_EI_INFER_IN_L0      = "TRUE",

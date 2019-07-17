@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jul  9 20:56:27 2019
+# Process ID: 28711
+# Current directory: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/mult_64wx64w_unsigned_synth_1
+# Command line: vivado -log mult_64wx64w_unsigned.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mult_64wx64w_unsigned.tcl
+# Log file: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/mult_64wx64w_unsigned_synth_1/mult_64wx64w_unsigned.vds
+# Journal file: /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.runs/mult_64wx64w_unsigned_synth_1/vivado.jou
+#-----------------------------------------------------------
+source mult_64wx64w_unsigned.tcl -notrace

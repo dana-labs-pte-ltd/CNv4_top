@@ -1,0 +1,84 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed Jul 17 09:08:30 2019
+| Host         : ubuntu running 64-bit Ubuntu 18.04.2 LTS
+| Command      : report_incremental_reuse -file xilinx_dma_pcie_ep_incremental_reuse_routed.rpt
+| Design       : xilinx_dma_pcie_ep
+| Device       : xcvu9p
+| Design State : Fully Routed
+------------------------------------------------------------------------------------------------
+
+Incremental Implementation Information
+
+Table of Contents
+-----------------
+1. Reuse Summary
+2. Reference Checkpoint Information
+3. Comparison with Reference Run
+4. Non Reuse Information
+
+1. Reuse Summary
+----------------
+
++-------+----------------------+--------------------+--------------------+--------+
+|  Type | Matched % (of Total) | Reuse % (of Total) | Fixed % (of Total) |  Total |
++-------+----------------------+--------------------+--------------------+--------+
+| Cells |                99.98 |              99.98 |               0.01 |  70322 |
+| Nets  |                99.99 |              99.96 |               0.00 |  76771 |
+| Pins  |                    - |              99.97 |                  - | 337748 |
+| Ports |               100.00 |             100.00 |             100.00 |     16 |
++-------+----------------------+--------------------+--------------------+--------+
+
+
+2. Reference Checkpoint Information
+-----------------------------------
+
++----------------+------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | /media/wanner/work/work/fpga_prj/CNv4_top_v1/xdma_0_ex.srcs/utils_1/imports/impl_2/xilinx_dma_pcie_ep_routed.dcp |
++----------------+------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+----------------------------+
+|         DCP Information        |            Value           |
++--------------------------------+----------------------------+
+| Vivado Version                 |                    v2018.3 |
+| DCP State                      |                 POST_ROUTE |
+| Recorded WNS                   |                      0.116 |
+| Recorded WHS                   |                      0.006 |
+| Reference Speed File Version   | PRODUCTION 1.23 10-29-2018 |
+| Incremental Speed File Version | PRODUCTION 1.23 10-29-2018 |
++--------------------------------+----------------------------+
+* Recorded WNS/WHS timing numbers are estimated timing numbers. They may vary slightly from sign-off timing numbers.
+
+
+3. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |       00:04 |       00:01 |       00:05 |       00:03 |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |       00:01 |       00:01 |
+| place_design    |       0.120 |       0.120 |       00:01 |       00:01 |       00:04 |       00:03 |
+| route_design    |       0.116 |             |       00:03 |       00:02 |       00:05 |       00:04 |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+4. Non Reuse Information
+------------------------
+
++-----------------------+------+
+|          Type         |   %  |
++-----------------------+------+
+| Non-Reused Cells      | 0.01 |
+|   New                 | 0.01 |
+| Partially reused nets | 0.01 |
+| Non-Reused nets       | 0.01 |
+| Non-Reused Ports      | 0.00 |
++-----------------------+------+
+
+

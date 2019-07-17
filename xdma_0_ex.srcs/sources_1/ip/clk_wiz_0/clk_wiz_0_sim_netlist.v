@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Tue Jul  2 11:22:46 2019
+// Date        : Tue Jul 16 11:04:15 2019
 // Host        : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /media/wanner/work/work/fpga_prj/CNv4_top/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+//               /media/wanner/work/work/fpga_prj/CNv4_top_v1/xdma_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -104,7 +104,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     .CLKOUT0_DIVIDE(5),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
-    .CLKOUT1_DIVIDE(10),
+    .CLKOUT1_DIVIDE(5),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUTPHY_MODE("VCO_2X"),

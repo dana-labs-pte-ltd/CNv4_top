@@ -299,6 +299,9 @@ module xdma_app #(
   assign local_dma_addr = local_mem_addr_1;
   assign local_mem_rdata_1 = local_dma_rdata;
 //  assign local_dma_clk = local_mem_clk_1;
+  wire local_reg_resetn = user_resetn;
+  wire local_dma_resetn = user_resetn;
+  
 
   // The sys_rst_n input is active low based on the core configuration
   assign sys_resetn = sys_rst_n;
@@ -555,6 +558,7 @@ axi4_amm_bridge axi4_amm_bridge_dma_inst (
         .avm_writedata(avm_writedata_1),                    // output wire [31 : 0] avm_writedata
         .avm_readdata(avm_readdata_1),                      // input wire [31 : 0] avm_readdata
         .avm_readdatavalid(avm_readdatavalid_1),            // input wire avm_readdatavalid
+        .avm_beginbursttransfer(avm_beginbursttransfer_1),
         .avm_burstcount(avm_burstcount_1),                  // output wire [0 : 0] avm_burstcount
         .avm_waitrequest(avm_waitrequest_1),                // input wire avm_waitrequest
         .avm_address(avm_address_1)                        // output wire [31 : 0] avm_address
@@ -577,14 +581,14 @@ axi4_amm_slave #(
           .avm_resetn(local_dma_resetn),
           .avm_write(avm_write_1),                            // output wire avm_write
           .avm_read(avm_read_1),                              // output wire avm_read
-          .avm_byteenable(avm_byteenable_1),                  // output wire [3 : 0] avm_byteenable
+          //.avm_byteenable(avm_byteenable_1),                  // output wire [3 : 0] avm_byteenable
           .avm_writedata(avm_writedata_1),                    // output wire [31 : 0] avm_writedata
           .avm_readdata(avm_readdata_1),                      // input wire [31 : 0] avm_readdata
           .avm_readdatavalid(avm_readdatavalid_1),            // input wire avm_readdatavalid
           .avm_burstcount(avm_burstcount_1),                  // output wire [0 : 0] avm_burstcount
           .avm_beginbursttransfer(avm_beginbursttransfer_1),  // output wire avm_beginbursttransfer
-          .avm_resp(avm_resp_1),                              // input wire [1 : 0] avm_resp
-          .avm_writeresponsevalid(avm_writeresponsevalid_1),  // input wire avm_writeresponsevalid
+          //.avm_resp(avm_resp_1),                              // input wire [1 : 0] avm_resp
+          //.avm_writeresponsevalid(avm_writeresponsevalid_1),  // input wire avm_writeresponsevalid
           .avm_waitrequest(avm_waitrequest_1),                // input wire avm_waitrequest
           .avm_address({4'b0,avm_address_1[31:4]}),
           

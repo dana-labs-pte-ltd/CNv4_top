@@ -83,138 +83,94 @@ parameter                              C_FAMILY            = "virtex7"
     input [C_S_AXI_ADDR_WIDTH-1:0]          avm_address,  
     input                                   avm_write, 
     input                                   avm_read, 
-    input [((C_S_AXI_DATA_WIDTH / 8)-1):0]  avm_byteenable, 
+//    input [((C_S_AXI_DATA_WIDTH / 8)-1):0]  avm_byteenable, 
     input [(C_S_AXI_DATA_WIDTH - 1):0]      avm_writedata,    
     output reg [(C_S_AXI_DATA_WIDTH - 1):0] avm_readdata, 
-    output reg [1:0]                        avm_resp,
+//    output reg [1:0]                        avm_resp,
     output reg                              avm_readdatavalid,
     input                                   avm_beginbursttransfer,
     input [C_AVM_BURST_WIDTH-1:0]           avm_burstcount,
-    output reg                              avm_writeresponsevalid,
+//    output reg                              avm_writeresponsevalid,
     output reg                              avm_waitrequest,
     
     //mem read and write
     	//output RAM interface single port
-    (*mark_debug = "true"*)output reg [C_S_AXI_DATA_WIDTH-1:0]     local_mem_wdata,
-    (*mark_debug = "true"*)output reg 						                  local_mem_wren,
-    (*mark_debug = "true"*)output reg  [C_S_AXI_ADDR_WIDTH-1:0]    local_mem_addr,
+    (*mark_debug = "true"*)output reg [C_S_AXI_DATA_WIDTH-1:0]    local_mem_wdata,
+    (*mark_debug = "true"*)output reg                             local_mem_wren,
+    (*mark_debug = "true"*)output reg  [C_S_AXI_ADDR_WIDTH-1:0]   local_mem_addr,
     (*mark_debug = "true"*)input  wire [C_S_AXI_DATA_WIDTH-1:0]	  local_mem_rdata,
-    output wire						                  local_mem_clk
+    output wire	                                                  local_mem_clk
 );
 
-    (*mark_debug = "true"*)reg [C_AVM_BURST_WIDTH-1:0]     arlen_i,awlen_i;
+    (*mark_debug = "true"*)reg [C_AVM_BURST_WIDTH-1:0]     arlen_i;
     //reg [(C_S_AXI_DATA_WIDTH - 1):0]            avm_mem [31:0];
     (*mark_debug = "true"*)reg                             avm_write_i;
     (*mark_debug = "true"*)reg                             avm_read_i;
-    reg                             avm_read_i0;
-    reg                             avm_read_i1;
-   (*mark_debug = "true"*) reg                             wr_done;
-    reg                             wait_done;
-    (*mark_debug = "true"*)reg                             rd_lat_done;
-    reg                             avm_write_i1;
+    (*mark_debug = "true"*)reg                             avm_read_i0;
+    (*mark_debug = "true"*)reg                             avm_read_i1;
 
-    (*mark_debug = "true"*)reg [9:0]                       rd_lat_cnt;
-    reg [7:0]                       rd_wait_cnt;
-    reg [7:0]                       wr_wait_cnt;
     (*mark_debug = "true"*)reg [C_S_AXI_ADDR_WIDTH-1:0]    avm_address_i;
     reg [(C_S_AXI_DATA_WIDTH - 1):0] avm_writedata_i;
     
     assign local_mem_clk = avm_clk;
 
-   localparam IDLE            = 2'h0;
-   localparam WRITE_AD_DATA   = 2'h1;
-   localparam READ_ADDRESS      = 2'h2;
-   localparam READ_DATA    = 2'h3;
-   localparam C_FIXED_READ_WAIT_1    = (C_HAS_FIXED_WAIT) ? C_FIXED_READ_WAIT: 0;
-   
-   (*mark_debug = "true"*)reg [1:0]  current_state   = IDLE;
-   (*mark_debug = "true"*)reg [1:0]  next_state      = IDLE;
-
-
-  always @(posedge avm_clk) begin
-     if(avm_resetn == 1'b0) begin
-           avm_address_i <= avm_address;    
-     end else begin
-         if(avm_write_i) begin 
-           avm_address_i <= avm_address_i + 1'b1;
-         end else if(avm_read_i) begin 
-           avm_address_i <= avm_address_i + 1'b1;
-         end else if(avm_read | avm_write) begin
-           avm_address_i <= avm_address;
-         end
-     end
-  end
+    //address
+    always @(posedge avm_clk) begin
+        if(avm_resetn == 1'b0) begin
+               avm_address_i <= avm_address;    
+        end else begin
+            if(avm_beginbursttransfer) begin
+               avm_address_i <= avm_address;
+            end else if(avm_write_i) begin 
+               avm_address_i <= avm_address_i + 1'b1;
+            end else if(avm_read_i) begin 
+               avm_address_i <= avm_address_i + 1'b1;
+            end
+        end
+    end
 
    always @(posedge avm_clk) begin
      if(avm_resetn == 1'b0) begin
         arlen_i <= 0;
-        rd_lat_done <= 0;
         avm_read_i <= 0;
       end else begin
-        if(next_state == READ_DATA && arlen_i > 0) begin 
-          rd_lat_done <= 0;
+        if(avm_beginbursttransfer && avm_read) begin 
           avm_read_i <= 1'b1;
-          arlen_i <= arlen_i - 1'b1;
-        end else if(next_state == READ_DATA && arlen_i == 0) begin 
-          rd_lat_done <= 1'b1;
-          avm_read_i <= 1'b0;
-          arlen_i <= 0;
-        end else begin
-          rd_lat_done <= 0;
-          avm_read_i <= 0;
           arlen_i <= avm_burstcount;
+        end else if(arlen_i > 1 && avm_read_i) begin 
+          avm_read_i <= 1'b1;
+          arlen_i <= arlen_i - 1;
+        end else if(arlen_i == 1) begin
+          avm_read_i <= 0;
         end
      end
    end
-
-   always @(posedge avm_clk) begin
-     if(avm_resetn == 1'b0) begin
-        awlen_i <= 0;
-        wr_done <= 0;
-      end else begin
-        if(next_state == WRITE_AD_DATA && awlen_i > 0) begin 
-          wr_done <= 0;
-          awlen_i <= awlen_i - 1'b1;
-        end else if(next_state == WRITE_AD_DATA && awlen_i == 0) begin 
-          wr_done <= 1'b1;
-          awlen_i <= 0;
-        end else begin
-          wr_done <= 0;
-          awlen_i <= avm_burstcount;
-        end
-     end
-   end
-
 
 //read delay
-  always @(posedge avm_clk) begin
-     if(avm_resetn == 1'b0) begin
+    always @(posedge avm_clk)
+    if(avm_resetn == 1'b0) begin
         avm_read_i0 <= 1'b0;
         avm_read_i1 <= 1'b0;
-     end else begin
+    end else begin
         avm_read_i0 <= avm_read_i1;
         avm_read_i1 <= avm_read_i;
-     end
-   end
+    end
 
-//for data read and write
-  always @(posedge avm_clk) begin
-     if(avm_resetn == 1'b0) begin
-          avm_waitrequest <= 1'b1;
-          avm_readdata <= 0;
-          avm_readdatavalid <= 1'b0;       
-     end else begin
-         avm_waitrequest <= 1'b0;
-         if(avm_read_i0) begin
-           avm_readdata <= local_mem_rdata;
-           avm_readdatavalid <= 1'b1;       
-         end
-         else begin
-           avm_readdata <= 0;
+    //for data read and write
+    always @(posedge avm_clk or negedge avm_resetn)
+    if(avm_resetn == 1'b0) begin
+        avm_waitrequest <= 1'b1;
+        avm_readdata <= 0;
+        avm_readdatavalid <= 1'b0;       
+    end else begin
+        avm_waitrequest <= 1'b0;
+        avm_readdata <= local_mem_rdata;
+        if(avm_read_i0) begin
+           avm_readdatavalid <= 1'b1;
+        end else begin
            avm_readdatavalid <= 1'b0;       
-         end
-     end
-   end
+        end
+    end
    
   //generata the ram write signal
   //for data read and write
@@ -231,72 +187,9 @@ parameter                              C_FAMILY            = "virtex7"
    end
 
   always @(posedge avm_clk) begin
-    if(avm_resetn == 1'b0) begin
-      avm_resp <= 2'b10;
-      avm_writeresponsevalid <= 1'b0;
-      avm_write_i1 <= 1'b0;
-    end else if(wr_done == 1'b1) begin
-      avm_resp <= 2'b00;
-      avm_write_i1 <= avm_write_i;
-      avm_writeresponsevalid <= 1'b1;      
-    end else begin
-      avm_resp <= 2'b00;
-      avm_writeresponsevalid <= 1'b0; 
-    end
-  end
-
-  always @(posedge avm_clk) begin
     avm_write_i <= avm_write;
     avm_writedata_i <= avm_writedata;
-    wait_done <= 1'b1;
   end
-
-  always @(*) begin
-      // Setup the default values
-     case (current_state)
-              // If RST is asserted reset the machine
-              IDLE: begin
-                  if(avm_read == 1'b1) begin
-                        next_state <= READ_ADDRESS;                       
-     			        end else if(avm_write == 1'b1) begin
-                        next_state <= WRITE_AD_DATA;                       
-                  end else begin
-                        next_state <= IDLE;
-                  end
-              end
-              WRITE_AD_DATA: begin
-                    if(wait_done == 1'b1 && wr_done == 1'b1)     
-                        next_state <= IDLE;
-                    else
-                        next_state <= WRITE_AD_DATA;                      
-              end
-              READ_ADDRESS: begin
-                    if(wait_done == 1'b1)     
-                        next_state <= READ_DATA;
-                    else
-                        next_state <= READ_ADDRESS; 
-              end
-              READ_DATA: begin
-                    if(rd_lat_done == 1'b1)     
-                        next_state <= IDLE;
-                    else
-                        next_state <= READ_DATA; 
-             end
-     		    default: begin
-                    next_state <= IDLE;           
-             end
-     
-          endcase
-         end
-  // This block assigns the next state, reset is synchronous.
-   always @(posedge avm_clk) begin
-      if(avm_resetn == 1'b0) begin
-         current_state <= IDLE;
-      end else begin
-         current_state <= next_state;
-      end
-   end
-
 
 endmodule
 

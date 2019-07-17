@@ -30,8 +30,8 @@ wire    [7:0]   dst_index = random_ram_rdata[47:40];
 wire    [7:0]   src_index = random_ram_rdata[39:32];
 wire    [31:0]  op_data = random_ram_rdata[31:0];
 
-reg     [2:0]   cs_state;
-reg     [2:0]   ns_state;
+(*mark_debug = "true"*)reg     [2:0]   cs_state;
+(*mark_debug = "true"*)reg     [2:0]   ns_state;
 
 parameter s_idle = 3'b001;
 parameter s_run = 3'b010;

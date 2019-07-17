@@ -119,7 +119,7 @@ BEGIN
       C_XDEVICEFAMILY => "virtexuplus",
       C_HAS_CE => 0,
       C_HAS_SCLR => 0,
-      C_LATENCY => 1,
+      C_LATENCY => 3,
       C_A_WIDTH => 64,
       C_A_TYPE => 1,
       C_B_WIDTH => 64,

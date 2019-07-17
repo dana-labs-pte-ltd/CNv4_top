@@ -120,6 +120,9 @@ module board;
   wire               rp_sys_clk_p;
   wire               rp_sys_clk_n;
 
+  wire                free_run_clock_p;
+  wire                free_run_clock_n;
+
 
 
   //
@@ -152,6 +155,15 @@ module board;
     .sys_clk_n(ep_sys_clk_n)
   );
 
+  //free run clock
+  sys_clk_gen_ds # (
+    .halfcycle(REF_CLK_HALF_CYCLE/3),
+    .offset(0)
+  )
+  CLK_GEN_FREE_RUN_CLK300M (
+    .sys_clk_p(free_run_clock_p),
+    .sys_clk_n(free_run_clock_n)
+  );
 
 
   //------------------------------------------------------------------------------//
@@ -193,6 +205,9 @@ module board;
     .sys_clk_n(ep_sys_clk_n),
     .sys_clk_p(ep_sys_clk_p),
     .sys_rst_n(sys_rst_n),
+
+    .free_run_clock_p_in(free_run_clock_p),
+    .free_run_clock_n_in(free_run_clock_n),
 
   
 
@@ -263,7 +278,7 @@ module board;
     end
 
   end
-  
+
  
 
 

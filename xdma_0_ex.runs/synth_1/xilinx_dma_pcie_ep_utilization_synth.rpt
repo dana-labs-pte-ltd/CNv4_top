@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Jul  3 17:23:18 2019
+| Date         : Wed Jul 17 08:59:09 2019
 | Host         : ubuntu running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file xilinx_dma_pcie_ep_utilization_synth.rpt -pb xilinx_dma_pcie_ep_utilization_synth.pb
 | Design       : xilinx_dma_pcie_ep
@@ -35,15 +35,15 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               |  218 |     0 |   1182240 |  0.02 |
-|   LUT as Logic          |  218 |     0 |   1182240 |  0.02 |
+| CLB LUTs*               | 8924 |     0 |   1182240 |  0.75 |
+|   LUT as Logic          | 8924 |     0 |   1182240 |  0.75 |
 |   LUT as Memory         |    0 |     0 |    591840 |  0.00 |
-| CLB Registers           |  478 |     0 |   2364480 |  0.02 |
-|   Register as Flip Flop |  478 |     0 |   2364480 |  0.02 |
+| CLB Registers           | 9103 |     0 |   2364480 |  0.38 |
+|   Register as Flip Flop | 9103 |     0 |   2364480 |  0.38 |
 |   Register as Latch     |    0 |     0 |   2364480 |  0.00 |
-| CARRY8                  |    4 |     0 |    147780 | <0.01 |
-| F7 Muxes                |    0 |     0 |    591120 |  0.00 |
-| F8 Muxes                |    0 |     0 |    295560 |  0.00 |
+| CARRY8                  |   87 |     0 |    147780 |  0.06 |
+| F7 Muxes                | 1343 |     0 |    591120 |  0.23 |
+| F8 Muxes                |  592 |     0 |    295560 |  0.20 |
 | F9 Muxes                |    0 |     0 |    147780 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -61,10 +61,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
+| 1849  |          Yes |           - |          Set |
+| 6602  |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 477   |          Yes |       Reset |            - |
+| 651   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -85,11 +85,12 @@ Table of Contents
 3. ARITHMETIC
 -------------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |      6840 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    3 |     0 |      6840 |  0.04 |
+|   DSP48E2 only |    3 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. I/O
@@ -158,15 +159,20 @@ Table of Contents
 +-------------+------+---------------------+
 |   Ref Name  | Used | Functional Category |
 +-------------+------+---------------------+
-| FDRE        |  477 |            Register |
-| LUT2        |  134 |                 CLB |
-| LUT6        |   53 |                 CLB |
-| LUT1        |   11 |                 CLB |
-| LUT3        |    9 |                 CLB |
-| LUT5        |    8 |                 CLB |
-| LUT4        |    5 |                 CLB |
-| CARRY8      |    4 |                 CLB |
+| FDCE        | 6602 |            Register |
+| LUT6        | 4695 |                 CLB |
+| LUT5        | 1894 |                 CLB |
+| FDPE        | 1849 |            Register |
+| MUXF7       | 1343 |                 CLB |
+| LUT2        | 1238 |                 CLB |
+| LUT3        |  987 |                 CLB |
+| LUT4        |  863 |                 CLB |
+| FDRE        |  651 |            Register |
+| MUXF8       |  592 |                 CLB |
+| CARRY8      |   87 |                 CLB |
+| LUT1        |   25 |                 CLB |
 | OBUF        |    3 |                 I/O |
+| DSP48E2     |    3 |          Arithmetic |
 | INBUF       |    1 |                 I/O |
 | IBUFDS_GTE4 |    1 |                 I/O |
 | IBUFCTRL    |    1 |              Others |

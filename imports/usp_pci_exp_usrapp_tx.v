@@ -102,7 +102,7 @@ module pci_exp_usrapp_tx #(
 );
 
 parameter    Tcq = 1;
-localparam   [31:0] DMA_BYTE_CNT = 32'h1000;
+localparam   [31:0] DMA_BYTE_CNT = 32'h0010000;
 
 localparam   [4:0] LINK_CAP_MAX_LINK_WIDTH = 5'd2;
 localparam   [3:0] LINK_CAP_MAX_LINK_SPEED = 4'd4;
@@ -121,7 +121,7 @@ localparam C_NUM_USR_IRQ	 = 1;
 
 /* Local Variables */
 integer                         i, j, k;
-reg     [7:0]                   DATA_STORE   [DMA_BYTE_CNT+1024-1:0]; // For Downstream Direction Data Storage
+reg     [7:0]                   DATA_STORE   [4095:0]; // For Downstream Direction Data Storage
 reg     [7:0]                   DATA_STORE_2 [(2**(RP_BAR_SIZE+1))-1:0]; // For Upstream Direction Data Storage
 reg     [31:0]                  ADDRESS_32_L;
 reg     [31:0]                  ADDRESS_32_H;
@@ -2274,6 +2274,10 @@ end
             TSK_TX_SYNCHRONIZE(0, 0, 0, `SYNC_CC_RDY);
             //-----------------------------------------------------------------------\\
             // Start of First Data Beat
+			$display("[%t] :  cpld test by zhangwn", $realtime);
+			$display("%h :  length", len_);
+			$display("%h :  bytecount", byte_count_);
+			$display("%h :  lower_addr_", lower_addr_);
             data_axis_i        =  {
                                    DATA_STORE[lower_addr_ +51], DATA_STORE[lower_addr_ +50], DATA_STORE[lower_addr_ +49],
                                    DATA_STORE[lower_addr_ +48], DATA_STORE[lower_addr_ +47], DATA_STORE[lower_addr_ +46],
@@ -3330,6 +3334,7 @@ end
         begin
             for (i_ = 0; i_ <= 4095; i_ = i_ + 1) begin
                 DATA_STORE[i_] = i_;
+				//DATA_STORE[i_] = 0;
             end
             
             for (i_ = 0; i_ <= (2**(RP_BAR_SIZE+1))-1; i_ = i_ + 1) begin
@@ -4752,8 +4757,13 @@ task TSK_INIT_DATA_H2C;
         #(Tcq);
     end
     for (k = 0; k < DMA_BYTE_CNT+64; k = k + 1)  begin
-       if( k < DMA_BYTE_CNT) begin
-        #(Tcq) DATA_STORE[1024+k] = k;
+       
+	   if( k < DMA_BYTE_CNT) begin
+			if( k % 8 == 0) begin
+				#(Tcq) DATA_STORE[1024+k] = (k >> 3);
+			end else begin
+				#(Tcq) DATA_STORE[1024+k] = 0;
+			end
        end else begin
         #(Tcq) DATA_STORE[1024+k] = 8'h00;
        end
@@ -4866,10 +4876,9 @@ task COMPARE_DATA_H2C;
     //Sampling data payload on XDMA
     
     @ (posedge board.EP.m_axi_wvalid) ;		  			//valid data comes at wvalid
-//      for (i=0; i<data_beat_count; i=i+1)   begin
-        i = 0;
-        while (i<data_beat_count) begin
+      for (i=0; i<data_beat_count; i=i+1)   begin
         @ (negedge board.EP.user_clk);							//samples data wvalid and negedge of user_clk
+
             if ( board.EP.m_axi_wready ) begin			//check for wready is high before sampling data
                case (board.C_DATA_WIDTH)
                 64: READ_DATA[i] = {((board.EP.m_axi_wstrb[7] == 1'b1) ? board.EP.m_axi_wdata[63:56] : 8'h00),
@@ -4994,7 +5003,7 @@ task COMPARE_DATA_H2C;
                                         ((board.EP.m_axi_wstrb[0] == 1'b1) ? board.EP.m_axi_wdata[7:0] : 8'h00)};
                endcase
                $display ("--- H2C data at XDMA = %h ---\n", READ_DATA[i]);
-                i=i+1;
+
             end
       end
 
@@ -5066,19 +5075,16 @@ task COMPARE_DATA_H2C;
       
         if (READ_DATA[i] == DATA_STORE_512[i]) begin
           matched_data_counter = matched_data_counter + 1;
-        end else begin
+        end else
           matched_data_counter = matched_data_counter;
-          $display ("-- READ_DATA[%d] = %h--:-- DATA_STORE_512[%d] = %h--\n", i,READ_DATA[i],i,DATA_STORE_512[i]);
-        end
       end
       
       if (matched_data_counter == data_beat_count) begin
         $display ("*** H2C Transfer Data MATCHES ***\n");
         $display("[%t] : XDMA H2C Test Completed Successfully",$realtime);
-      end else begin
-        $display ("-- matched_data_counter = %d--\n", matched_data_counter);
+      end else
         $display ("---***ERROR*** H2C Transfer Data MISMATCH ---\n");
-      end
+    
   end
            
 endtask
@@ -5123,13 +5129,13 @@ task COMPARE_DATA_C2H;
         end
             @ (posedge board.RP.m_axis_cq_tvalid) ;         //2nd tvalid - CQ on RP receives Data from XDMA
 
-               //for (i=0; i<cq_data_beat_count; i=i+1)   begin
-              i = 0;
-              while(i<cq_data_beat_count) begin
+               for (i=0; i<cq_data_beat_count; i=i+1)   begin
+
                  @ (negedge user_clk);						//Samples data at negedge of user_clk
 
                     if ( board.RP.m_axis_cq_tready ) begin	//Samples data when tready is high
                       //$display ("--m_axis_cq_tvalid = %d, m_axis_cq_tready = %d, i = %d--\n", board.RP.m_axis_cq_tvalid, board.RP.m_axis_cq_tready, i);
+
                       if ( i == 0) begin					//First Data Beat
 
                         READ_DATA_C2H_512[i][511:0]   = board.RP.m_axis_cq_tdata [511:128];
@@ -5159,7 +5165,7 @@ task COMPARE_DATA_C2H;
                         endcase
 
                       end
-                      i = i + 1;
+
                     end
 
                end
